@@ -1,19 +1,260 @@
-```html
+```html id="x8m2qa"
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Joker OS | Official Website</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Joker OS | Joker Release</title>
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+
+        /* =========================
+           JOKER HOMEPAGE
+        ========================= */
+
+        .home-page {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .hero {
+            text-align: center;
+
+            padding: 80px 20px 60px;
+        }
+
+        .joker-logo {
+            font-size: 90px;
+
+            margin-bottom: 15px;
+        }
+
+        .release-badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            margin: 10px 0 20px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 75px);
+
+            margin: 10px 0;
+
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            max-width: 750px;
+
+            margin: 20px auto;
+
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            opacity: 0.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .feature-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            padding: 25px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 45px;
+
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            opacity: 0.75;
+        }
+
+        .showcase {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-top: 30px;
+        }
+
+        .showcase-card {
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .showcase-card img {
+            width: 100%;
+
+            height: 260px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .showcase-content {
+            padding: 22px;
+        }
+
+        .ecosystem-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 30px;
+        }
+
+        .ecosystem-card {
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .ecosystem-icon {
+            font-size: 50px;
+
+            margin-bottom: 12px;
+        }
+
+        .status {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 6px 12px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            background: rgba(255,180,0,0.12);
+
+            color: #ffc44d;
+        }
+
+        .community-box {
+            padding: 40px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.10);
+        }
+
+        .community-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        @media (max-width: 900px) {
+
+            .feature-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVIGATION
@@ -22,28 +263,34 @@
 <header>
 
     <div class="logo">
-        🃏 Joker OS
+        🃏 Joker Network
     </div>
 
     <nav>
 
-        <a href="index.html">Home</a>
+        <a href="index.html">
+            Home
+        </a>
 
-        <a href="#drivers">Drivers</a>
+        <a href="games.html">
+            Games
+        </a>
 
-        <a href="games.html">Games</a>
+        <a href="shop.html">
+            🖥️ Joker PC
+        </a>
 
-        <a href="#screenshots">Screenshots</a>
+        <a href="login.html">
+            Login
+        </a>
 
-        <a href="#download">Download</a>
+        <a href="register.html">
+            Register
+        </a>
 
-        <a href="shop.html">🖥️ Joker PC</a>
-
-        <a href="login.html">Login</a>
-
-        <a href="register.html">Register</a>
-
-        <a href="donate.html">❤️ Donate</a>
+        <a href="donate.html">
+            ❤️ Donate
+        </a>
 
     </nav>
 
@@ -54,453 +301,505 @@
      HERO
 ========================= -->
 
-<section class="hero" id="home">
+<main class="home-page">
 
-    <p class="hero-tag">
-        BUILD YOUR FUTURE
-    </p>
+    <section class="hero">
 
-    <h1>
-        Joker OS
-    </h1>
-
-    <h2>
-        Your Own Operating System.
-        Built for Innovation.
-    </h2>
-
-    <p>
-        A modern operating system built by
-        Jokernetworkpvt for performance,
-        gaming and everyday computing.
-    </p>
-
-    <div class="hero-buttons">
-
-        <a href="#download" class="button">
-            Download Joker Release
-        </a>
-
-        <a href="games.html" class="button secondary">
-            🎮 Joker Games
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FEATURES
-========================= -->
-
-<section id="features">
-
-    <h2>Why Joker OS?</h2>
-
-    <div class="grid">
-
-        <div class="card">
-
-            <h3>⚡ Performance</h3>
-
-            <p>
-                Designed with performance and
-                efficient system usage in mind.
-            </p>
-
+        <div class="joker-logo">
+            🃏
         </div>
 
-
-        <div class="card">
-
-            <h3>🔒 Security</h3>
-
-            <p>
-                Built with modern security
-                features for a safer system.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🎨 Modern Desktop</h3>
-
-            <p>
-                A clean and modern desktop
-                experience designed for Joker OS.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🤖 Joker AI</h3>
-
-            <p>
-                Intelligent system assistance
-                planned for future releases.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🔄 Joker Update</h3>
-
-            <p>
-                Keep your Joker OS installation
-                updated with future releases.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🎮 Joker Games</h3>
-
-            <p>
-                A lightweight game launcher
-                designed for Joker OS.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     DRIVERS
-========================= -->
-
-<section id="drivers">
-
-    <h2>Official Drivers</h2>
-
-    <p class="section-description">
-        Drivers for supported Joker OS hardware.
-    </p>
-
-    <div class="grid">
-
-        <div class="card">
-
-            <h3>🎮 Graphics Drivers</h3>
-
-            <p>
-                Graphics support for compatible
-                hardware.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🌐 Network Drivers</h3>
-
-            <p>
-                Wi-Fi and Ethernet support.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🔊 Audio Drivers</h3>
-
-            <p>
-                Audio device support for
-                compatible hardware.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>⚙️ Driver Manager</h3>
-
-            <p>
-                Automatically detect compatible
-                hardware and install available
-                drivers when supported.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     GAMES
-========================= -->
-
-<section id="games">
-
-    <h2>Joker Games</h2>
-
-    <p class="section-description">
-        A lightweight game launcher designed
-        for Joker OS and low-end PCs.
-    </p>
-
-    <div class="grid">
-
-        <div class="card">
-
-            <h3>🎮 Multiple Games</h3>
-
-            <p>
-                Manage multiple installed games
-                from one launcher.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>⚡ Lightweight</h3>
-
-            <p>
-                Designed to keep the launcher
-                lightweight for low-end PCs.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🚀 Single Launcher</h3>
-
-            <p>
-                Launch supported games from
-                the Joker Games application.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>⭐ Game Library</h3>
-
-            <p>
-                Organize and access your games
-                from one place.
-            </p>
-
-        </div>
-
-    </div>
-
-    <br>
-
-    <div class="center">
-
-        <a href="games.html" class="button">
-            Open Joker Games
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SCREENSHOTS
-========================= -->
-
-<section id="screenshots">
-
-    <h2>Joker OS Screenshots</h2>
-
-    <div class="images">
-
-        <img
-            src="images/desktop.png"
-            alt="Joker OS Desktop"
-        >
-
-        <img
-            src="images/login.png"
-            alt="Joker OS Login Screen"
-        >
-
-        <img
-            src="images/filemanager.png"
-            alt="Joker OS File Manager"
-        >
-
-        <img
-            src="images/settings.png"
-            alt="Joker OS Settings"
-        >
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     JOKER PC
-========================= -->
-
-<section id="joker-pc">
-
-    <h2>🖥️ Joker PC</h2>
-
-    <p class="section-description">
-        Discover Joker PCs for gaming,
-        work, education and everyday computing.
-    </p>
-
-    <div class="grid">
-
-        <div class="card">
-
-            <h3>🎮 Gaming PC</h3>
-
-            <p>
-                Gaming-ready systems for
-                your favorite games.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>⚡ Budget PC</h3>
-
-            <p>
-                Affordable systems for
-                everyday computing.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>💼 Office PC</h3>
-
-            <p>
-                Reliable computers for work
-                and education.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>🛠️ Custom PC</h3>
-
-            <p>
-                Build a PC using your preferred
-                components.
-            </p>
-
-        </div>
-
-    </div>
-
-    <br>
-
-    <div class="center">
-
-        <a href="shop.html" class="button">
-            Shop Joker PC
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     DOWNLOAD
-========================= -->
-
-<section id="download">
-
-    <div class="download-box">
-
-        <h2>Download Joker OS</h2>
-
-        <p>
-            <strong>Release:</strong>
-            Joker Release 1.0
+        <span class="release-badge">
+            JOKER RELEASE
+        </span>
+
+        <h1>
+            Joker OS
+        </h1>
+
+        <p class="hero-subtitle">
+            A lightweight operating system project
+            focused on gaming, simple computing and
+            low-end PC users.
         </p>
 
-        <p>
-            <strong>Architecture:</strong>
-            x86_64 (64-bit)
+
+        <div class="hero-buttons">
+
+            <a
+                href="#download"
+                class="button"
+            >
+                ⬇️ Download Joker OS
+            </a>
+
+            <a
+                href="games.html"
+                class="button secondary"
+            >
+                🎮 Joker Games
+            </a>
+
+            <a
+                href="shop.html"
+                class="button secondary"
+            >
+                🖥️ Joker PC
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section>
+
+        <p class="hero-tag">
+            JOKER OS
         </p>
 
-        <p>
-            <strong>Format:</strong>
-            Bootable ISO Image
+        <h2>
+            ⚡ Built for Simple Computing
+        </h2>
+
+        <p class="section-description">
+            Joker OS is being developed with
+            lightweight computers and gaming users
+            in mind.
         </p>
 
-        <p>
-            <strong>Minimum RAM:</strong>
-            4 GB
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Lightweight
+                </h3>
+
+                <p>
+                    Designed to keep the system
+                    simple and efficient.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Gaming
+                </h3>
+
+                <p>
+                    A gaming-focused ecosystem
+                    for compatible PCs.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    JokerShield
+                </h3>
+
+                <p>
+                    Future security and protection
+                    features.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Joker AI
+                </h3>
+
+                <p>
+                    Future AI tools and utilities
+                    for the Joker ecosystem.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SCREENSHOTS
+    ========================== -->
+
+    <section>
+
+        <p class="hero-tag">
+            SCREENSHOTS
         </p>
 
-        <p>
-            <strong>Storage:</strong>
-            20 GB
+        <h2>
+            🖥️ Joker OS Interface
+        </h2>
+
+        <p class="section-description">
+            Preview the Joker OS desktop and
+            system interface.
         </p>
 
-        <br>
 
-        <a href="#" class="button">
-            Download Joker Release
-        </a>
-
-    </div>
-
-</section>
+        <div class="showcase">
 
 
-<!-- =========================
-     SUPPORT
-========================= -->
+            <div class="showcase-card">
 
-<section id="support">
+                <img
+                    src="images/desktop.png"
+                    alt="Joker OS Desktop"
+                    loading="lazy"
+                >
 
-    <h2>Support Joker OS</h2>
+                <div class="showcase-content">
 
-    <p class="section-description">
+                    <h3>
+                        🖥️ Desktop
+                    </h3>
 
-        Support the development of Joker OS
-        and help us build future releases.
+                    <p>
+                        Joker OS desktop environment.
+                    </p>
 
-    </p>
+                </div>
 
-    <div class="center">
+            </div>
 
-        <a href="donate.html" class="button">
-            ❤️ Support Joker OS
-        </a>
 
-    </div>
+            <div class="showcase-card">
 
-</section>
+                <img
+                    src="images/login.png"
+                    alt="Joker OS Login Screen"
+                    loading="lazy"
+                >
+
+                <div class="showcase-content">
+
+                    <h3>
+                        🔐 Login Screen
+                    </h3>
+
+                    <p>
+                        Joker OS login interface.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="showcase-card">
+
+                <img
+                    src="images/filemanager.png"
+                    alt="Joker OS File Manager"
+                    loading="lazy"
+                >
+
+                <div class="showcase-content">
+
+                    <h3>
+                        📁 File Manager
+                    </h3>
+
+                    <p>
+                        Simple file management interface.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="showcase-card">
+
+                <img
+                    src="images/settings.png"
+                    alt="Joker OS Settings"
+                    loading="lazy"
+                >
+
+                <div class="showcase-content">
+
+                    <h3>
+                        ⚙️ Settings
+                    </h3>
+
+                    <p>
+                        Joker OS system settings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ECOSYSTEM
+    ========================== -->
+
+    <section>
+
+        <p class="hero-tag">
+            JOKER ECOSYSTEM
+        </p>
+
+        <h2>
+            🃏 One Joker Network
+        </h2>
+
+
+        <div class="ecosystem-grid">
+
+
+            <!-- JOKER OS -->
+
+            <div class="ecosystem-card">
+
+                <div class="ecosystem-icon">
+                    🖥️
+                </div>
+
+                <h3>
+                    Joker OS
+                </h3>
+
+                <p>
+                    Lightweight operating system
+                    project for PCs.
+                </p>
+
+                <span class="status">
+                    Joker Release
+                </span>
+
+            </div>
+
+
+            <!-- JOKER GAMES -->
+
+            <div class="ecosystem-card">
+
+                <div class="ecosystem-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Joker Games
+                </h3>
+
+                <p>
+                    Future lightweight gaming
+                    launcher and game library.
+                </p>
+
+                <br>
+
+                <a
+                    href="games.html"
+                    class="button"
+                >
+                    Explore Games
+                </a>
+
+            </div>
+
+
+            <!-- JOKER PC -->
+
+            <div class="ecosystem-card">
+
+                <div class="ecosystem-icon">
+                    🖥️
+                </div>
+
+                <h3>
+                    Joker PC
+                </h3>
+
+                <p>
+                    Future PCs, monitors, components
+                    and gaming accessories.
+                </p>
+
+                <br>
+
+                <a
+                    href="shop.html"
+                    class="button"
+                >
+                    Visit Store
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DOWNLOAD
+    ========================== -->
+
+    <section id="download">
+
+        <div class="community-box">
+
+            <p class="hero-tag">
+                JOKER OS
+            </p>
+
+            <h2>
+                ⬇️ Joker Release
+            </h2>
+
+            <p>
+                The Joker OS release download will be
+                provided here when the release is ready.
+            </p>
+
+            <br>
+
+            <span class="status">
+                🟡 Download Coming Soon
+            </span>
+
+            <br><br>
+
+            <span class="button disabled-button">
+                ⬇️ Download Joker OS
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACCOUNT & COMMUNITY
+    ========================== -->
+
+    <section>
+
+        <div class="community-box">
+
+            <p class="hero-tag">
+                JOKER NETWORK
+            </p>
+
+            <h2>
+                👥 Join Joker Network
+            </h2>
+
+            <p>
+                Create an account and stay connected
+                with future Joker projects.
+            </p>
+
+
+            <div class="community-buttons">
+
+                <a
+                    href="register.html"
+                    class="button"
+                >
+                    📝 Register
+                </a>
+
+                <a
+                    href="login.html"
+                    class="button secondary"
+                >
+                    🔐 Login
+                </a>
+
+                <a
+                    href="donate.html"
+                    class="button secondary"
+                >
+                    ❤️ Support Joker
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SHOP CTA
+    ========================== -->
+
+    <section>
+
+        <div class="community-box">
+
+            <h2>
+                🛒 Build Your Future PC
+            </h2>
+
+            <p>
+                Explore Gaming PCs, Budget PCs,
+                Office PCs, Custom PCs and accessories.
+            </p>
+
+            <br>
+
+            <a
+                href="shop.html"
+                class="button"
+            >
+                🖥️ Open Joker PC Store
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
 
 
 <!-- =========================
@@ -509,28 +808,51 @@
 
 <footer>
 
-    <h2>🃏 Joker OS</h2>
+    <h2>
+        🃏 Joker Network
+    </h2>
 
     <p>
-        Your Own Operating System.
-        Built for Innovation.
+        Joker OS • Joker Games • Joker PC
     </p>
 
     <br>
 
     <p>
 
-        <a href="index.html">Home</a> ·
+        <a href="index.html">
+            Home
+        </a>
 
-        <a href="games.html">Games</a> ·
+        ·
 
-        <a href="shop.html">Joker PC</a> ·
+        <a href="games.html">
+            Games
+        </a>
 
-        <a href="login.html">Login</a> ·
+        ·
 
-        <a href="register.html">Register</a> ·
+        <a href="shop.html">
+            Joker PC
+        </a>
 
-        <a href="donate.html">Donate</a>
+        ·
+
+        <a href="login.html">
+            Login
+        </a>
+
+        ·
+
+        <a href="register.html">
+            Register
+        </a>
+
+        ·
+
+        <a href="donate.html">
+            Donate
+        </a>
 
     </p>
 
@@ -545,5 +867,6 @@
 
 
 </body>
+
 </html>
 ```
