@@ -10,137 +10,578 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Create your Joker Network account.">
+          content="Create a Joker Network account.">
 
     <title>Register | Joker Network</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <style>
 
-        .register-page {
-            min-height: 75vh;
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #252525 0%,
+                    #111111 45%,
+                    #070707 100%
+                );
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            min-height: 70px;
+
+            padding:
+                0 30px;
+
             display: flex;
+
             align-items: center;
-            justify-content: center;
-            padding: 60px 20px;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            background:
+                rgba(8,8,8,0.95);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.10);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #cccccc;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           REGISTER
+        ========================= */
+
+        .register-page {
+
+            min-height:
+                calc(100vh - 70px);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                50px 20px;
+
         }
 
         .register-box {
-            width: 100%;
-            max-width: 520px;
-            padding: 40px 35px;
-            border-radius: 24px;
+
+            width:
+                min(520px, 100%);
+
+            padding:
+                40px 35px;
+
+            border-radius:
+                24px;
+
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,0.06),
-                    rgba(255,255,255,0.025)
+                    #202020,
+                    #111111
                 );
-            border: 1px solid rgba(255,255,255,0.10);
-            box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.50);
+
         }
+
 
         .register-icon {
-            text-align: center;
-            font-size: 65px;
+
+            text-align:
+                center;
+
+            font-size:
+                65px;
+
+            margin-bottom:
+                10px;
+
         }
+
 
         .register-tag {
-            text-align: center;
-            color: #ff2b2b;
-            font-size: 13px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin-top: 10px;
+
+            text-align:
+                center;
+
+            color:
+                #ff3030;
+
+            font-size:
+                12px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                2px;
+
         }
 
-        .register-box h1 {
-            text-align: center;
-            margin: 10px 0;
+
+        h1 {
+
+            text-align:
+                center;
+
+            margin:
+                8px 0 10px;
+
+            font-size:
+                30px;
+
         }
+
 
         .description {
-            text-align: center;
-            color: #aaa;
-            margin-bottom: 30px;
+
+            text-align:
+                center;
+
+            color:
+                #999999;
+
+            line-height:
+                1.5;
+
+            margin-bottom:
+                30px;
+
         }
+
+
+        /* =========================
+           FORM
+        ========================= */
 
         .form-group {
-            margin-bottom: 20px;
+
+            margin-bottom:
+                20px;
+
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+
+        label {
+
+            display:
+                block;
+
+            margin-bottom:
+                8px;
+
+            font-weight:
+                800;
+
+            font-size:
+                14px;
+
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 14px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.12);
-            background: rgba(255,255,255,0.05);
-            color: white;
-            font-size: 16px;
+
+        input {
+
+            width:
+                100%;
+
+            padding:
+                14px;
+
+            border-radius:
+                10px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            background:
+                #0b0b0b;
+
+            color:
+                #ffffff;
+
+            font-size:
+                16px;
+
         }
 
-        .form-group input::placeholder {
-            color: #777;
+
+        input::placeholder {
+
+            color:
+                #666666;
+
         }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: rgba(255,255,255,0.4);
+
+        input:focus {
+
+            outline:
+                none;
+
+            border-color:
+                #ff3030;
+
+            box-shadow:
+                0 0 0 2px
+                rgba(255,48,48,0.10);
+
         }
+
+
+        .hint {
+
+            display:
+                block;
+
+            margin-top:
+                7px;
+
+            color:
+                #777777;
+
+            font-size:
+                12px;
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
 
         .register-button {
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
+
+            width:
+                100%;
+
+            padding:
+                14px;
+
+            border:
+                none;
+
+            border-radius:
+                10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3030,
+                    #b00000
+                );
+
+            color:
+                #ffffff;
+
+            font-size:
+                16px;
+
+            font-weight:
+                900;
+
+            cursor:
+                pointer;
+
+            transition:
+                transform 0.2s,
+                opacity 0.2s;
+
         }
+
+
+        .register-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            opacity:
+                0.92;
+
+        }
+
 
         .register-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
+
+            opacity:
+                0.55;
+
+            cursor:
+                not-allowed;
+
+            transform:
+                none;
+
         }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
 
         #registerMessage {
-            min-height: 24px;
-            margin-top: 20px;
-            text-align: center;
-            font-weight: bold;
-            line-height: 1.5;
+
+            min-height:
+                30px;
+
+            margin:
+                20px 0 5px;
+
+            text-align:
+                center;
+
+            font-size:
+                14px;
+
+            line-height:
+                1.5;
+
         }
+
+
+        .success {
+            color:
+                #70e08b;
+        }
+
+
+        .error {
+            color:
+                #ff7777;
+        }
+
+
+        .info {
+            color:
+                #bbbbbb;
+        }
+
+
+        /* =========================
+           LOGIN LINK
+        ========================= */
+
+        .login-area {
+
+            text-align:
+                center;
+
+            margin-top:
+                25px;
+
+            color:
+                #999999;
+
+        }
+
 
         .login-link {
-            text-align: center;
-            margin-top: 25px;
+
+            display:
+                inline-block;
+
+            margin-top:
+                8px;
+
+            padding:
+                11px 18px;
+
+            border-radius:
+                10px;
+
+            background:
+                #242424;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            font-weight:
+                800;
+
         }
+
+
+        .login-link:hover {
+
+            background:
+                #303030;
+
+        }
+
+
+        /* =========================
+           SECURITY
+        ========================= */
 
         .security-note {
-            margin-top: 25px;
-            padding: 15px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.03);
-            color: #999;
-            font-size: 13px;
-            line-height: 1.5;
+
+            margin-top:
+                25px;
+
+            padding:
+                15px;
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            color:
+                #888888;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.5;
+
         }
 
-        .password-note {
-            margin-top: 6px;
-            color: #777;
-            font-size: 12px;
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding:
+                35px 20px;
+
+            text-align:
+                center;
+
+            background:
+                #080808;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color:
+                #888888;
+
         }
 
-        @media (max-width: 600px) {
+
+        footer h2 {
+            color:
+                #ffffff;
+        }
+
+
+        footer a {
+            color:
+                #cccccc;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding:
+                    15px 20px;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            nav {
+
+                width:
+                    100%;
+
+                gap:
+                    12px;
+
+            }
+
+
+            .register-page {
+
+                padding:
+                    30px 15px;
+
+            }
+
 
             .register-box {
-                padding: 30px 20px;
+
+                padding:
+                    30px 20px;
+
             }
 
         }
@@ -163,6 +604,7 @@
         🃏 Joker Network
     </div>
 
+
     <nav>
 
         <a href="index.html">
@@ -177,14 +619,6 @@
             🖥️ Joker PC
         </a>
 
-        <a href="login.html">
-            Login
-        </a>
-
-        <a href="register.html">
-            Register
-        </a>
-
         <a href="donate.html">
             ❤️ Donate
         </a>
@@ -195,18 +629,19 @@
 
 
 <!-- =========================
-     REGISTER PAGE
+     REGISTER
 ========================= -->
 
 <main>
 
 <section class="register-page">
 
+
     <div class="register-box">
 
 
         <div class="register-icon">
-            📝
+            🃏
         </div>
 
 
@@ -223,36 +658,41 @@
         <p class="description">
 
             Join Joker Network for future
-            Joker OS, Joker Games and Joker PC features.
+            Joker OS, Joker Games and
+            Joker PC features.
 
         </p>
 
 
         <!-- =====================
-             REGISTER FORM
+             FORM
         ====================== -->
 
         <form id="registerForm">
 
 
+            <!-- DISPLAY NAME -->
+
             <div class="form-group">
 
-                <label for="name">
+                <label for="displayName">
                     Display Name
                 </label>
 
                 <input
+                    id="displayName"
                     type="text"
-                    id="name"
-                    name="name"
                     placeholder="Your Joker name"
-                    autocomplete="name"
-                    maxlength="50"
+                    autocomplete="nickname"
+                    minlength="2"
+                    maxlength="40"
                     required
                 >
 
             </div>
 
+
+            <!-- EMAIL -->
 
             <div class="form-group">
 
@@ -261,9 +701,8 @@
                 </label>
 
                 <input
-                    type="email"
                     id="email"
-                    name="email"
+                    type="email"
                     placeholder="you@example.com"
                     autocomplete="email"
                     required
@@ -272,6 +711,8 @@
             </div>
 
 
+            <!-- PASSWORD -->
+
             <div class="form-group">
 
                 <label for="password">
@@ -279,21 +720,22 @@
                 </label>
 
                 <input
-                    type="password"
                     id="password"
-                    name="password"
-                    placeholder="Minimum 8 characters"
+                    type="password"
+                    placeholder="Create a password"
                     autocomplete="new-password"
                     minlength="8"
                     required
                 >
 
-                <div class="password-note">
+                <span class="hint">
                     Use a strong password with at least 8 characters.
-                </div>
+                </span>
 
             </div>
 
+
+            <!-- CONFIRM PASSWORD -->
 
             <div class="form-group">
 
@@ -302,10 +744,9 @@
                 </label>
 
                 <input
-                    type="password"
                     id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="Enter your password again"
+                    type="password"
+                    placeholder="Repeat your password"
                     autocomplete="new-password"
                     minlength="8"
                     required
@@ -314,10 +755,12 @@
             </div>
 
 
+            <!-- BUTTON -->
+
             <button
-                type="submit"
                 id="registerButton"
-                class="button register-button"
+                type="submit"
+                class="register-button"
             >
 
                 🃏 Create Joker Account
@@ -328,39 +771,36 @@
         </form>
 
 
-        <!-- =====================
-             MESSAGE
-        ====================== -->
+        <!-- MESSAGE -->
 
-        <p id="registerMessage"
-           role="status"
-           aria-live="polite">
-        </p>
+        <div
+            id="registerMessage"
+            role="status"
+            aria-live="polite">
+        </div>
 
 
-        <!-- =====================
-             LOGIN
-        ====================== -->
+        <!-- LOGIN -->
 
-        <div class="login-link">
+        <div class="login-area">
 
-            <p>
-                Already have an account?
-            </p>
+            Already have an account?
+
+            <br>
 
             <a
                 href="login.html"
-                class="button secondary"
+                class="login-link"
             >
+
                 🔐 Login
+
             </a>
 
         </div>
 
 
-        <!-- =====================
-             SECURITY
-        ====================== -->
+        <!-- SECURITY -->
 
         <div class="security-note">
 
@@ -400,8 +840,6 @@
         Joker OS • Joker Games • Joker PC
     </p>
 
-    <br>
-
     <p>
 
         <a href="index.html">
@@ -434,8 +872,6 @@
 
     </p>
 
-    <br>
-
     <p>
         © 2026 Jokernetworkpvt.
         All Rights Reserved.
@@ -445,7 +881,7 @@
 
 
 <!-- =========================
-     SUPABASE JAVASCRIPT
+     SUPABASE
 ========================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -454,20 +890,88 @@
 
 
 <!-- =========================
-     REGISTRATION
+     REGISTER SCRIPT
 ========================= -->
 
 <script>
 
 const registerForm =
-    document.getElementById("registerForm");
+    document.getElementById(
+        "registerForm"
+    );
+
+const displayNameInput =
+    document.getElementById(
+        "displayName"
+    );
+
+const emailInput =
+    document.getElementById(
+        "email"
+    );
+
+const passwordInput =
+    document.getElementById(
+        "password"
+    );
+
+const confirmPasswordInput =
+    document.getElementById(
+        "confirmPassword"
+    );
 
 const registerButton =
-    document.getElementById("registerButton");
+    document.getElementById(
+        "registerButton"
+    );
 
 const registerMessage =
-    document.getElementById("registerMessage");
+    document.getElementById(
+        "registerMessage"
+    );
 
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+function showMessage(
+    text,
+    type = "info"
+) {
+
+    registerMessage.textContent =
+        text;
+
+    registerMessage.className =
+        type;
+
+}
+
+
+/* =========================================================
+   SUPABASE CHECK
+========================================================= */
+
+if (
+    typeof jokerSupabase ===
+    "undefined"
+) {
+
+    showMessage(
+        "❌ Supabase is not loaded. Check supabase.js.",
+        "error"
+    );
+
+    registerButton.disabled =
+        true;
+
+}
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
 
 registerForm.addEventListener(
     "submit",
@@ -476,63 +980,69 @@ registerForm.addEventListener(
         event.preventDefault();
 
 
-        const name =
-            document
-                .getElementById("name")
+        const displayName =
+            displayNameInput
                 .value
                 .trim();
 
 
         const email =
-            document
-                .getElementById("email")
+            emailInput
                 .value
                 .trim();
 
 
         const password =
-            document
-                .getElementById("password")
+            passwordInput
                 .value;
 
 
         const confirmPassword =
-            document
-                .getElementById("confirmPassword")
+            confirmPasswordInput
                 .value;
-
-
-        registerMessage.textContent = "";
 
 
         /* =====================
            VALIDATION
         ====================== */
 
-        if (name.length < 2) {
+        if (
+            displayName.length < 2
+        ) {
 
-            registerMessage.textContent =
-                "❌ Please enter a valid display name.";
-
-            return;
-
-        }
-
-
-        if (password.length < 8) {
-
-            registerMessage.textContent =
-                "❌ Password must contain at least 8 characters.";
+            showMessage(
+                "❌ Display name must contain at least 2 characters.",
+                "error"
+            );
 
             return;
 
         }
 
 
-        if (password !== confirmPassword) {
+        if (
+            password.length < 8
+        ) {
 
-            registerMessage.textContent =
-                "❌ Passwords do not match.";
+            showMessage(
+                "❌ Password must contain at least 8 characters.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            password !==
+            confirmPassword
+        ) {
+
+            showMessage(
+                "❌ Passwords do not match.",
+                "error"
+            );
 
             return;
 
@@ -540,58 +1050,54 @@ registerForm.addEventListener(
 
 
         /* =====================
-           DISABLE BUTTON
+           START
         ====================== */
 
-        registerButton.disabled = true;
+        registerButton.disabled =
+            true;
 
         registerButton.textContent =
-            "⏳ Creating Account...";
+            "⏳ Creating account...";
 
 
-        registerMessage.textContent =
-            "Creating your Joker account...";
+        showMessage(
+            "Creating your Joker Network account...",
+            "info"
+        );
 
 
         try {
 
 
-            /* =====================
-               SUPABASE SIGN UP
-            ====================== */
-
             const {
                 data,
                 error
-            } = await jokerSupabase.auth.signUp({
+            } =
+                await jokerSupabase.auth
+                    .signUp({
 
-                email: email,
+                        email:
+                            email,
 
-                password: password,
+                        password:
+                            password,
 
-                options: {
+                        options: {
 
-                    data: {
+                            data: {
 
-                        display_name: name
+                                display_name:
+                                    displayName
 
-                    },
+                            }
 
-                    emailRedirectTo:
-                        window.location.origin +
-                        window.location.pathname
-                            .replace(
-                                "register.html",
-                                "login.html"
-                            )
+                        }
 
-                }
-
-            });
+                    });
 
 
             /* =====================
-               ERROR
+               SUPABASE ERROR
             ====================== */
 
             if (error) {
@@ -601,13 +1107,20 @@ registerForm.addEventListener(
                     error
                 );
 
-                registerMessage.textContent =
-                    "❌ " + error.message;
 
-                registerButton.disabled = false;
+                showMessage(
+                    "❌ " +
+                    error.message,
+                    "error"
+                );
+
+
+                registerButton.disabled =
+                    false;
 
                 registerButton.textContent =
                     "🃏 Create Joker Account";
+
 
                 return;
 
@@ -618,35 +1131,121 @@ registerForm.addEventListener(
                SUCCESS
             ====================== */
 
-            registerMessage.textContent =
-                "✅ Account created successfully! " +
-                "Please check your email to verify your Joker account.";
+            console.log(
+                "Joker registration:",
+                data
+            );
 
 
-            registerForm.reset();
+            /*
+               Supabase can return a user
+               without a session when
+               email confirmation is enabled.
+            */
+
+            if (
+                data.user &&
+                !data.session
+            ) {
+
+                showMessage(
+                    "✅ Account created! Please check your email and verify your Joker Network account before logging in.",
+                    "success"
+                );
 
 
-            registerButton.disabled = false;
+                registerForm.reset();
+
+
+                registerButton.disabled =
+                    false;
+
+                registerButton.textContent =
+                    "🃏 Create Joker Account";
+
+
+                return;
+
+            }
+
+
+            /* =====================
+               SESSION AVAILABLE
+            ====================== */
+
+            if (
+                data.session
+            ) {
+
+                showMessage(
+                    "✅ Account created! Opening your Joker account...",
+                    "success"
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        window.location.href =
+                            "account.html";
+
+                    },
+                    700
+                );
+
+
+                return;
+
+            }
+
+
+            /* =====================
+               UNEXPECTED RESPONSE
+            ====================== */
+
+            showMessage(
+                "⚠️ Account request completed, but Supabase returned no session. Check your email for verification.",
+                "info"
+            );
+
+
+            registerButton.disabled =
+                false;
 
             registerButton.textContent =
                 "🃏 Create Joker Account";
 
-
         }
+
 
         catch (error) {
 
             console.error(
-                "Unexpected registration error:",
+                "Joker registration exception:",
                 error
             );
 
 
-            registerMessage.textContent =
-                "❌ Something went wrong. Please try again.";
+            /*
+               IMPORTANT:
+
+               Show the real error instead
+               of hiding it behind
+               "Something went wrong".
+            */
+
+            showMessage(
+                "❌ " +
+                (
+                    error.message ||
+                    "Registration failed."
+                ),
+                "error"
+            );
 
 
-            registerButton.disabled = false;
+            registerButton.disabled =
+                false;
 
             registerButton.textContent =
                 "🃏 Create Joker Account";
@@ -654,7 +1253,6 @@ registerForm.addEventListener(
         }
 
     }
-
 );
 
 </script>
