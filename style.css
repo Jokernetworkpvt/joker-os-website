@@ -1,419 +1,800 @@
 ```css
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
+/* =========================================================
+   JOKER NETWORK — GLOBAL STYLE
+   Joker OS • Joker Games • Joker PC
+   ========================================================= */
+
+
+/* =========================
+   ROOT
+========================= */
+
+:root {
+
+    --bg: #080808;
+    --bg-secondary: #101010;
+    --card: #151515;
+
+    --text: #f5f5f5;
+    --muted: #a8a8a8;
+
+    --border: rgba(255,255,255,0.10);
+
+    --accent: #ff2b2b;
+    --accent-hover: #ff5050;
+
+    --gold: #ffc44d;
+
+    --radius: 16px;
+
 }
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    background: #090909;
-    color: #ffffff;
-    line-height: 1.6;
-}
 
-/* =========================
-   NAVIGATION
-========================= */
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 18px 6%;
-
-    background: rgba(10, 10, 10, 0.92);
-    backdrop-filter: blur(14px);
-
-    border-bottom: 1px solid #292929;
-}
-
-.logo {
-    color: #a855f7;
-    font-size: 24px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 8px;
-}
-
-nav a {
-    color: #eeeeee;
-    text-decoration: none;
-    padding: 8px 10px;
-    border-radius: 8px;
-    transition: 0.25s ease;
-}
-
-nav a:hover {
-    color: #ffffff;
-    background: #211338;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 82vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 120px 20px 80px;
+    margin: 0;
 
     background:
         radial-gradient(
             circle at top,
-            #35145c 0%,
-            #170b28 35%,
-            #090909 75%
-        );
-}
-
-.hero-tag {
-    color: #c084fc;
-    font-weight: 700;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
-
-.hero h1 {
-    font-size: clamp(48px, 8vw, 90px);
-    line-height: 1.05;
-    margin: 18px 0;
-}
-
-.hero h2 {
-    max-width: 800px;
-    font-size: clamp(22px, 4vw, 38px);
-    margin-bottom: 15px;
-}
-
-.hero p:not(.hero-tag) {
-    max-width: 750px;
-    color: #cfcfcf;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    padding: 90px 7%;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 38px;
-    margin-bottom: 18px;
-}
-
-.section-description {
-    max-width: 700px;
-    margin: 0 auto 35px;
-    color: #bdbdbd;
-}
-
-/* =========================
-   GRID
-========================= */
-
-.grid {
-    max-width: 1200px;
-    margin: 35px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-/* =========================
-   CARDS
-========================= */
-
-.card {
-    padding: 28px;
-
-    background: rgba(255, 255, 255, 0.04);
-
-    border: 1px solid #292929;
-    border-radius: 18px;
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #8b5cf6;
-    background: rgba(139, 92, 246, 0.08);
-}
-
-.card h3 {
-    color: #ffffff;
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: #bdbdbd;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.button {
-    display: inline-block;
-
-    padding: 13px 25px;
-    margin: 8px;
-
-    color: #ffffff;
-    background: #8b5cf6;
-
-    text-decoration: none;
-
-    border: none;
-    border-radius: 30px;
-
-    cursor: pointer;
-
-    transition: 0.25s ease;
-}
-
-.button:hover {
-    background: #a855f7;
-    transform: translateY(-2px);
-}
-
-.secondary {
-    background: transparent;
-    border: 1px solid #8b5cf6;
-}
-
-/* =========================
-   CENTER
-========================= */
-
-.center {
-    text-align: center;
-}
-
-/* =========================
-   SCREENSHOTS
-========================= */
-
-.images {
-    max-width: 1200px;
-    margin: 35px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.images img {
-    width: 100%;
-    display: block;
-
-    border-radius: 16px;
-    border: 1px solid #303030;
-
-    transition: 0.3s ease;
-}
-
-.images img:hover {
-    transform: scale(1.02);
-    border-color: #8b5cf6;
-}
-
-/* =========================
-   DOWNLOAD BOX
-========================= */
-
-.download-box {
-    max-width: 1000px;
-    margin: 0 auto;
-
-    padding: 45px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(139, 92, 246, 0.12),
-            rgba(255, 255, 255, 0.03)
+            #1a0808 0%,
+            #080808 45%,
+            #050505 100%
         );
 
-    border: 1px solid #352450;
-    border-radius: 24px;
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+
 }
 
-/* =========================
-   FORMS
-========================= */
-
-form {
-    max-width: 480px;
-    margin: 0 auto;
-
-    text-align: left;
-}
-
-form label {
-    display: block;
-    margin-bottom: 7px;
-    color: #dddddd;
-}
-
-form input {
-    width: 100%;
-
-    padding: 14px 16px;
-
-    background: #111111;
-    color: #ffffff;
-
-    border: 1px solid #3a3a3a;
-    border-radius: 10px;
-
-    outline: none;
-}
-
-form input:focus {
-    border-color: #8b5cf6;
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
-}
-
-form input[type="checkbox"] {
-    width: auto;
-    margin-right: 6px;
-}
-
-form button {
-    font-size: 16px;
-}
 
 /* =========================
    LINKS
 ========================= */
 
 a {
-    color: #c084fc;
+
+    color: var(--text);
+
+    text-decoration: none;
+
 }
 
+
 a:hover {
-    color: #ffffff;
+
+    color: var(--accent-hover);
+
 }
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 5%;
+
+    background:
+        rgba(5,5,5,0.90);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+nav a {
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+nav a:hover {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: var(--text);
+
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+    width: 100%;
+
+}
+
+
+section {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin:
+        0 auto;
+
+    padding:
+        55px 0;
+
+}
+
+
+section + section {
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.04);
+
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3 {
+
+    margin-top: 0;
+
+    line-height: 1.2;
+
+}
+
+
+h1 {
+
+    font-size:
+        clamp(38px, 6vw, 72px);
+
+}
+
+
+h2 {
+
+    font-size:
+        clamp(28px, 4vw, 44px);
+
+}
+
+
+h3 {
+
+    font-size: 21px;
+
+}
+
+
+p {
+
+    color: var(--text);
+
+}
+
+
+.section-description {
+
+    max-width: 750px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+}
+
+
+.hero-tag {
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+
+    display: inline-block;
+
+    padding:
+        11px 18px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--accent);
+
+    color: #fff;
+
+    font-weight: 800;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.button:hover {
+
+    color: #fff;
+
+    background:
+        var(--accent-hover);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(255,43,43,0.20);
+
+}
+
+
+.button.secondary {
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+}
+
+
+.button.secondary:hover {
+
+    background:
+        rgba(255,255,255,0.13);
+
+}
+
+
+/* =========================
+   DISABLED
+========================= */
+
+.disabled-button {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+
+    padding: 25px;
+
+    border-radius:
+        var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(255,255,255,0.18);
+
+    background:
+        rgba(255,255,255,0.07);
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* =========================
+   DOWNLOAD BOX
+========================= */
+
+.download-box {
+
+    padding:
+        35px;
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,43,43,0.10),
+            rgba(255,255,255,0.04)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+
+    max-width: 100%;
+
+}
+
+
+img:not([src]),
+img[src=""] {
+
+    display: none;
+
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+input,
+textarea,
+select {
+
+    font-family:
+        inherit;
+
+}
+
+
+input,
+textarea,
+select {
+
+    color:
+        var(--text);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid
+        var(--border);
+
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    outline: none;
+
+    border-color:
+        rgba(255,255,255,0.35);
+
+}
+
+
+/* =========================
+   TABLES
+========================= */
+
+table {
+
+    width: 100%;
+
+    border-collapse:
+        collapse;
+
+}
+
+
+th,
+td {
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+th {
+
+    color:
+        var(--text);
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+
+    display: inline-block;
+
+    padding:
+        5px 10px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    background:
+        rgba(255,180,0,0.12);
+
+    color:
+        var(--gold);
+
+}
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    padding: 55px 20px;
 
-    text-align: center;
+    margin-top:
+        40px;
 
-    background: #050505;
+    padding:
+        50px 5%;
 
-    border-top: 1px solid #252525;
+    text-align:
+        center;
 
-    color: #aaaaaa;
+    background:
+        #050505;
+
+    border-top:
+        1px solid
+        var(--border);
+
 }
+
 
 footer h2 {
-    color: #ffffff;
-    margin-bottom: 10px;
+
+    font-size:
+        24px;
+
 }
 
-footer a {
-    text-decoration: none;
-    margin: 0 5px;
+
+footer p {
+
+    color:
+        var(--muted);
+
 }
+
+
+footer a {
+
+    color:
+        var(--muted);
+
+}
+
+
+footer a:hover {
+
+    color:
+        var(--text);
+
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+
+    width:
+        9px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #050505;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #292929;
+
+    border-radius:
+        20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        #404040;
+
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+
+    background:
+        var(--accent);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        padding:
+            14px 5%;
+
+    }
+
+
+    .logo {
+
+        text-align:
+            center;
+
+    }
+
+
+    nav {
+
+        justify-content:
+            center;
+
+    }
+
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 950px) {
+@media (max-width: 600px) {
 
-    header {
-        position: relative;
+    section {
 
-        flex-direction: column;
-        gap: 15px;
+        width:
+            92%;
+
+        padding:
+            40px 0;
+
     }
 
-    nav {
-        justify-content: center;
+
+    h1 {
+
+        font-size:
+            40px;
+
     }
+
+
+    h2 {
+
+        font-size:
+            30px;
+
+    }
+
 
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .download-box {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .button {
+
+        margin:
+            3px 0;
+
     }
 
 }
 
-@media (max-width: 600px) {
 
-    header {
-        padding: 16px 4%;
-    }
+/* =========================
+   REDUCED MOTION
+========================= */
 
-    nav {
-        gap: 3px;
-    }
+@media (prefers-reduced-motion: reduce) {
 
-    nav a {
-        font-size: 13px;
-        padding: 7px;
-    }
+    * {
 
-    .hero {
-        min-height: 75vh;
-        padding: 80px 18px;
-    }
+        scroll-behavior:
+            auto !important;
 
-    section {
-        padding: 65px 18px;
-    }
+        transition:
+            none !important;
 
-    section h2 {
-        font-size: 30px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .images {
-        grid-template-columns: 1fr;
-    }
-
-    .download-box {
-        padding: 28px 18px;
     }
 
 }
