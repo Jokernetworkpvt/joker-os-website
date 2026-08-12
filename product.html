@@ -1,1216 +1,997 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Joker Network | Product</title>
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-    background: #050505;
-    min-height: 100vh;
-}
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
+    <meta charset="UTF-8">
 
-    background:
-        linear-gradient(
-            rgba(0,0,0,.82),
-            rgba(0,0,0,.96)
-        ),
-        url("images/home-background.jpg")
-        center center / cover no-repeat;
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    z-index: -2;
-}
+    <title>Joker Network | Product</title>
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
+    <meta
+        name="description"
+        content="Joker Network product configuration and shopping page."
+    >
 
-    background:
-        radial-gradient(
-            circle at 80% 10%,
-            rgba(255,23,68,.18),
-            transparent 35%
-        );
+    <style>
 
-    z-index: -1;
-    pointer-events: none;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+        html {
+            scroll-behavior: smooth;
+        }
 
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+        body {
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+            background: #07050c;
+            color: #ffffff;
 
-    padding: 16px 6%;
+            overflow-x: hidden;
+        }
 
-    background: rgba(0,0,0,.88);
-    backdrop-filter: blur(15px);
+        a {
+            color: inherit;
+        }
 
-    border-bottom: 1px solid rgba(255,255,255,.08);
-}
+        button,
+        select {
+            font: inherit;
+        }
 
-.logo {
-    color: #fff;
-    text-decoration: none;
 
-    font-size: 23px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
+        /* =========================================
+           NAVIGATION
+        ========================================= */
 
-.logo span {
-    color: #ff1744;
-}
+        .navbar {
+            position: sticky;
+            top: 0;
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 22px;
+            z-index: 1000;
 
-    list-style: none;
-}
+            min-height: 74px;
 
-.nav-links a {
-    color: #aaa;
-    text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-    font-size: 13px;
-    font-weight: 700;
+            padding: 16px 7%;
 
-    transition: .2s;
-}
+            background:
+                rgba(7,5,12,.88);
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff1744;
-}
+            border-bottom:
+                1px solid rgba(255,255,255,.07);
 
-.menu-button {
-    display: none;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
 
-    border: 0;
-    background: transparent;
+        .logo {
+            text-decoration: none;
 
-    color: #fff;
+            font-size: 23px;
+            font-weight: 950;
 
-    font-size: 27px;
+            letter-spacing: 1px;
+        }
 
-    cursor: pointer;
-}
+        .logo-joker {
+            color: #ffffff;
+        }
 
-/* =========================================================
-   MAIN
-========================================================= */
+        .logo-network {
+            background:
+                linear-gradient(
+                    90deg,
+                    #a75cff,
+                    #ff38b0
+                );
 
-.page {
-    width: min(1120px, 92%);
-    margin: auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    padding: 55px 0 90px;
-}
+        .nav-links {
+            display: flex;
+            align-items: center;
 
-/* =========================================================
-   BREADCRUMB
-========================================================= */
+            gap: 27px;
+        }
 
-.breadcrumb {
-    margin-bottom: 25px;
+        .nav-links a {
+            color: #aaa3b2;
 
-    color: #777;
+            text-decoration: none;
 
-    font-size: 11px;
-}
+            font-size: 13px;
+            font-weight: 700;
 
-.breadcrumb a {
-    color: #aaa;
-    text-decoration: none;
-}
+            transition: .2s;
+        }
 
-.breadcrumb a:hover {
-    color: #ff1744;
-}
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #d276ff;
+        }
 
-.breadcrumb span {
-    margin: 0 7px;
-    color: #444;
-}
+        .nav-shop {
+            padding: 10px 15px;
 
-/* =========================================================
-   PRODUCT
-========================================================= */
+            border-radius: 9px;
 
-.product-layout {
-    display: grid;
+            color: #ffffff !important;
 
-    grid-template-columns:
-        1fr 1fr;
+            background:
+                linear-gradient(
+                    90deg,
+                    #762cff,
+                    #d72cff
+                );
+        }
 
-    gap: 45px;
 
-    align-items: start;
-}
+        /* =========================================
+           PAGE
+        ========================================= */
 
-/* =========================================================
-   IMAGE PANEL
-========================================================= */
+        .page {
+            min-height: calc(100vh - 74px);
 
-.product-image-panel {
-    position: sticky;
-    top: 100px;
+            padding: 70px 7% 110px;
 
-    min-height: 470px;
+            background:
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(130,50,220,.14),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 35%,
+                    rgba(255,40,170,.08),
+                    transparent 28%
+                ),
+                #07050c;
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        .breadcrumb {
+            max-width: 1250px;
 
-    overflow: hidden;
+            margin: 0 auto 30px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.09);
+            color: #77717f;
 
-    border-radius: 20px;
+            font-size: 12px;
+        }
 
-    background:
-        rgba(5,5,5,.7);
+        .breadcrumb a {
+            color: #a96bdf;
 
-    backdrop-filter: blur(12px);
-}
+            text-decoration: none;
+        }
 
-.product-image-panel img {
-    width: 100%;
-    height: 470px;
 
-    object-fit: contain;
+        /* =========================================
+           PRODUCT LAYOUT
+        ========================================= */
 
-    padding: 30px;
+        .product-layout {
+            max-width: 1250px;
 
-    transition: .3s;
-}
+            margin: auto;
 
-.product-image-panel img:hover {
-    transform: scale(1.04);
-}
+            display: grid;
 
-/* =========================================================
-   DETAILS
-========================================================= */
+            grid-template-columns:
+                .95fr
+                1.05fr;
 
-.product-details {
-    padding-top: 5px;
-}
+            gap: 45px;
 
-.product-category {
-    display: inline-block;
+            align-items: start;
+        }
 
-    margin-bottom: 12px;
 
-    color: #ff5270;
+        /* =========================================
+           PRODUCT IMAGE
+        ========================================= */
 
-    font-size: 10px;
-    font-weight: 900;
+        .product-media {
+            position: sticky;
+            top: 105px;
+        }
 
-    letter-spacing: 1px;
+        .product-image {
+            position: relative;
 
-    text-transform: uppercase;
-}
+            min-height: 560px;
 
-.product-title {
-    margin-bottom: 15px;
+            overflow: hidden;
 
-    color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    font-size:
-        clamp(34px, 5vw, 58px);
+            border-radius: 24px;
 
-    line-height: 1;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(140,60,230,.22),
+                    transparent 55%
+                ),
+                #08060d;
 
-    letter-spacing: -2px;
-}
+            border:
+                1px solid rgba(190,100,255,.18);
 
-.product-description {
-    margin-bottom: 24px;
+            box-shadow:
+                0 30px 90px rgba(0,0,0,.35);
+        }
 
-    color: #888;
+        .product-image img {
+            width: 100%;
+            height: 100%;
 
-    font-size: 14px;
+            min-height: 560px;
 
-    line-height: 1.8;
-}
+            display: block;
 
-/* =========================================================
-   PRICE
-========================================================= */
+            object-fit: cover;
+        }
 
-.price-box {
-    margin-bottom: 22px;
+        .product-image-placeholder {
+            width: 100%;
+            min-height: 560px;
 
-    padding: 18px;
+            display: flex;
+            flex-direction: column;
 
-    border:
-        1px solid
-        rgba(255,23,68,.2);
+            align-items: center;
+            justify-content: center;
 
-    border-radius: 14px;
+            text-align: center;
+        }
 
-    background:
-        rgba(255,23,68,.06);
-}
+        .placeholder-icon {
+            font-size: 80px;
 
-.price-label {
-    color: #777;
+            margin-bottom: 20px;
+        }
 
-    font-size: 10px;
+        .placeholder-text {
+            color: #77717f;
 
-    margin-bottom: 6px;
-}
+            font-size: 13px;
+        }
 
-.price {
-    color: #ff5270;
+        .product-badge {
+            position: absolute;
 
-    font-size: 25px;
-    font-weight: 900;
-}
+            top: 20px;
+            left: 20px;
 
-.price-note {
-    margin-top: 5px;
+            z-index: 3;
 
-    color: #666;
+            padding: 9px 13px;
 
-    font-size: 10px;
-}
+            border-radius: 8px;
 
-/* =========================================================
-   WARRANTY
-========================================================= */
+            color: #ffffff;
 
-.warranty-box {
-    margin-bottom: 22px;
+            background:
+                linear-gradient(
+                    90deg,
+                    #762cff,
+                    #d72cff
+                );
 
-    padding: 17px;
+            font-size: 9px;
+            font-weight: 900;
 
-    border:
-        1px solid
-        rgba(0,180,255,.2);
+            letter-spacing: 1.5px;
+        }
 
-    border-radius: 14px;
 
-    background:
-        rgba(0,150,255,.05);
-}
+        /* =========================================
+           PRODUCT INFO
+        ========================================= */
 
-.warranty-title {
-    margin-bottom: 7px;
+        .product-info {
+            min-width: 0;
+        }
 
-    color: #8bd6ff;
+        .product-category {
+            color: #b566ed;
 
-    font-size: 11px;
-    font-weight: 900;
-}
+            font-size: 10px;
+            font-weight: 900;
 
-.warranty-text {
-    color: #888;
+            letter-spacing: 2.5px;
+        }
 
-    font-size: 11px;
+        .product-title {
+            margin-top: 10px;
 
-    line-height: 1.6;
-}
+            font-size: clamp(
+                38px,
+                5vw,
+                58px
+            );
 
-/* =========================================================
-   OPTIONS
-========================================================= */
+            line-height: 1;
 
-.options-box {
-    display: none;
+            letter-spacing: -2px;
+        }
 
-    margin-bottom: 22px;
+        .product-description {
+            margin-top: 18px;
 
-    padding: 18px;
+            color: #99919f;
 
-    border:
-        1px solid
-        rgba(255,255,255,.1);
+            font-size: 15px;
+            line-height: 1.75;
+        }
 
-    border-radius: 14px;
 
-    background:
-        rgba(255,255,255,.035);
-}
+        /* =========================================
+           BASIC PRODUCT NOTICE
+        ========================================= */
 
-.option-group {
-    margin-bottom: 17px;
-}
+        .configurator {
+            margin-top: 30px;
 
-.option-group:last-child {
-    margin-bottom: 0;
-}
+            padding: 25px;
 
-.option-group label {
-    display: block;
+            border-radius: 20px;
 
-    margin-bottom: 8px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(31,19,45,.95),
+                    rgba(11,8,17,.98)
+                );
 
-    color: #aaa;
+            border:
+                1px solid rgba(190,100,255,.15);
+        }
 
-    font-size: 11px;
-    font-weight: 800;
-}
+        .configurator-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-.option-select {
-    width: 100%;
+            gap: 15px;
 
-    padding: 13px 14px;
+            margin-bottom: 22px;
+        }
 
-    border:
-        1px solid
-        rgba(255,255,255,.12);
+        .configurator-heading h2 {
+            font-size: 20px;
+        }
 
-    border-radius: 9px;
+        .configurator-heading span {
+            padding: 7px 9px;
 
-    outline: none;
+            border-radius: 7px;
 
-    background: #111;
+            color: #8cffb9;
 
-    color: #fff;
+            background:
+                rgba(60,200,120,.08);
 
-    font-size: 12px;
+            font-size: 9px;
+            font-weight: 900;
+        }
 
-    cursor: pointer;
-}
 
-.option-select:focus {
-    border-color: #ff1744;
-}
+        /* =========================================
+           OPTION GROUP
+        ========================================= */
 
-.option-select option {
-    background: #111;
-    color: #fff;
-}
+        .option-group {
+            margin-top: 23px;
+        }
 
-/* =========================================================
-   ACTIONS
-========================================================= */
+        .option-label {
+            display: flex;
+            justify-content: space-between;
 
-.actions {
-    display: flex;
+            margin-bottom: 10px;
+        }
 
-    gap: 10px;
+        .option-label strong {
+            font-size: 13px;
+        }
 
-    margin-bottom: 20px;
-}
+        .option-label span {
+            color: #77717f;
 
-.primary-button,
-.secondary-button {
-    display: flex;
+            font-size: 10px;
+        }
 
-    align-items: center;
-    justify-content: center;
+        .option-select {
+            width: 100%;
 
-    min-height: 46px;
+            padding: 14px 15px;
 
-    padding: 0 20px;
+            border-radius: 10px;
 
-    border-radius: 10px;
+            outline: none;
 
-    text-decoration: none;
+            color: #ffffff;
 
-    font-size: 11px;
-    font-weight: 900;
+            background:
+                #120c19;
 
-    transition: .2s;
+            border:
+                1px solid rgba(190,100,255,.18);
 
-    cursor: pointer;
-}
+            cursor: pointer;
 
-.primary-button {
-    flex: 1;
+            transition: .2s;
+        }
 
-    background: #ff1744;
+        .option-select:hover,
+        .option-select:focus {
+            border-color:
+                rgba(190,100,255,.55);
+        }
 
-    border: 1px solid #ff1744;
+        .option-select option {
+            color: #ffffff;
 
-    color: #fff;
-}
+            background: #120c19;
+        }
 
-.primary-button:hover {
-    background: #d50032;
-    border-color: #d50032;
-}
 
-.secondary-button {
-    border:
-        1px solid
-        rgba(255,255,255,.12);
+        /* =========================================
+           INCLUDED ITEMS
+        ========================================= */
 
-    background:
-        rgba(255,255,255,.04);
+        .included-box {
+            margin-top: 24px;
 
-    color: #aaa;
-}
+            padding: 18px;
 
-.secondary-button:hover {
-    border-color: #ff1744;
-    color: #ff5270;
-}
+            border-radius: 13px;
 
-/* =========================================================
-   PHYSICAL DAMAGE NOTICE
-========================================================= */
+            background:
+                rgba(100,50,160,.06);
 
-.damage-notice {
-    padding: 17px;
+            border:
+                1px solid rgba(180,100,255,.10);
+        }
 
-    border:
-        1px solid
-        rgba(255,255,255,.08);
+        .included-box h3 {
+            margin-bottom: 13px;
 
-    border-radius: 12px;
+            font-size: 13px;
+        }
 
-    background:
-        rgba(255,255,255,.025);
-}
+        .included-list {
+            display: grid;
 
-.damage-notice h3 {
-    margin-bottom: 8px;
+            grid-template-columns:
+                1fr 1fr;
 
-    color: #ff5270;
+            gap: 9px;
+        }
 
-    font-size: 11px;
-}
+        .included-item {
+            color: #a8a0af;
 
-.damage-notice p {
-    color: #777;
+            font-size: 11px;
+        }
 
-    font-size: 10px;
+        .included-item::before {
+            content: "✓";
 
-    line-height: 1.7;
-}
+            margin-right: 7px;
 
-/* =========================================================
-   PRODUCT INFORMATION
-========================================================= */
+            color: #b966ff;
 
-.info-section {
-    margin-top: 45px;
+            font-weight: 900;
+        }
 
-    display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+        /* =========================================
+           EXTERNAL GPU
+        ========================================= */
 
-    gap: 15px;
-}
+        .gpu-note {
+            margin-top: 15px;
 
-.info-card {
-    padding: 20px;
+            padding: 14px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.08);
+            border-radius: 10px;
 
-    border-radius: 14px;
+            color: #aaa2b0;
 
-    background:
-        rgba(255,255,255,.035);
-}
+            background:
+                rgba(255,255,255,.025);
 
-.info-card h3 {
-    margin-bottom: 9px;
+            border:
+                1px solid rgba(255,255,255,.06);
 
-    color: #fff;
+            font-size: 11px;
 
-    font-size: 12px;
-}
+            line-height: 1.6;
+        }
 
-.info-card p {
-    color: #777;
+        .gpu-note strong {
+            color: #d37aff;
+        }
 
-    font-size: 10px;
 
-    line-height: 1.7;
-}
+        /* =========================================
+           PRICE
+        ========================================= */
 
-/* =========================================================
-   NOT FOUND
-========================================================= */
+        .price-box {
+            margin-top: 25px;
 
-.not-found {
-    display: none;
+            padding: 22px;
 
-    padding: 100px 20px;
+            border-radius: 16px;
 
-    text-align: center;
-}
+            background:
+                rgba(255,255,255,.025);
 
-.not-found h1 {
-    margin-bottom: 12px;
+            border:
+                1px solid rgba(255,255,255,.07);
+        }
 
-    font-size: 40px;
-}
+        .price-row {
+            display: flex;
 
-.not-found p {
-    margin-bottom: 20px;
+            align-items: center;
+            justify-content: space-between;
 
-    color: #777;
-}
+            gap: 20px;
+        }
 
-.not-found a {
-    display: inline-flex;
+        .price-label {
+            color: #77717f;
 
-    padding: 12px 18px;
+            font-size: 11px;
+        }
 
-    border-radius: 9px;
+        .mrp {
+            color: #77717f;
 
-    background: #ff1744;
+            text-decoration: line-through;
 
-    color: #fff;
+            font-size: 13px;
+        }
 
-    text-decoration: none;
+        .final-price {
+            margin-top: 7px;
 
-    font-size: 11px;
-    font-weight: 900;
-}
+            font-size: 34px;
+            font-weight: 950;
+        }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+        .final-price span {
+            color: #b966ff;
+        }
 
-footer {
-    padding: 45px 20px;
+        .saving {
+            margin-top: 8px;
 
-    text-align: center;
+            color: #8cffb9;
 
-    background:
-        rgba(0,0,0,.88);
+            font-size: 11px;
+            font-weight: 800;
+        }
 
-    border-top:
-        1px solid
-        rgba(255,255,255,.08);
-}
 
-.footer-logo {
-    margin-bottom: 10px;
+        /* =========================================
+           ACTIONS
+        ========================================= */
 
-    font-size: 22px;
-    font-weight: 900;
+        .product-actions {
+            display: grid;
 
-    letter-spacing: 2px;
-}
+            grid-template-columns:
+                1fr 1fr;
 
-.footer-logo span {
-    color: #ff1744;
-}
+            gap: 12px;
 
-footer p {
-    margin-bottom: 15px;
+            margin-top: 18px;
+        }
 
-    color: #777;
+        .action-button {
+            padding: 15px;
 
-    font-size: 11px;
-}
+            border: 0;
 
-.footer-links {
-    display: flex;
+            border-radius: 10px;
 
-    justify-content: center;
+            cursor: pointer;
 
-    flex-wrap: wrap;
+            text-align: center;
 
-    gap: 18px;
-}
+            text-decoration: none;
 
-.footer-links a {
-    color: #888;
+            font-size: 12px;
+            font-weight: 900;
 
-    text-decoration: none;
+            transition: .25s;
+        }
 
-    font-size: 11px;
-}
+        .action-primary {
+            color: #ffffff;
 
-.footer-links a:hover {
-    color: #ff1744;
-}
+            background:
+                linear-gradient(
+                    90deg,
+                    #762cff,
+                    #d72cff
+                );
+        }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+        .action-secondary {
+            color: #ffffff;
 
-@media (max-width: 800px) {
+            background:
+                rgba(255,255,255,.045);
 
-    .menu-button {
-        display: block;
-    }
+            border:
+                1px solid rgba(190,100,255,.2);
+        }
 
-    .nav-links {
-        position: absolute;
+        .action-button:hover {
+            transform: translateY(-3px);
+        }
 
-        top: 65px;
-        left: 5%;
-        right: 5%;
 
-        display: none;
+        /* =========================================
+           PRODUCT DETAILS
+        ========================================= */
 
-        flex-direction: column;
-        align-items: stretch;
+        .details-section {
+            max-width: 1250px;
 
-        padding: 20px;
+            margin: 70px auto 0;
+        }
 
-        border:
-            1px solid
-            rgba(255,255,255,.1);
+        .details-grid {
+            display: grid;
 
-        border-radius: 15px;
+            grid-template-columns:
+                1fr 1fr;
 
-        background:
-            rgba(0,0,0,.97);
-    }
+            gap: 18px;
+        }
 
-    .nav-links.show {
-        display: flex;
-    }
+        .detail-card {
+            padding: 25px;
 
-    .product-layout {
-        grid-template-columns: 1fr;
+            border-radius: 16px;
 
-        gap: 30px;
-    }
+            background:
+                rgba(255,255,255,.025);
 
-    .product-image-panel {
-        position: relative;
-        top: auto;
+            border:
+                1px solid rgba(180,100,255,.10);
+        }
 
-        min-height: 360px;
-    }
+        .detail-card h3 {
+            margin-bottom: 15px;
 
-    .product-image-panel img {
-        height: 360px;
-    }
+            font-size: 16px;
+        }
 
-    .info-section {
-        grid-template-columns: 1fr;
-    }
-}
+        .spec-table {
+            width: 100%;
 
-@media (max-width: 500px) {
+            border-collapse: collapse;
+        }
 
-    .page {
-        width: 92%;
-    }
+        .spec-table tr {
+            border-bottom:
+                1px solid rgba(255,255,255,.05);
+        }
 
-    .product-title {
-        font-size: 38px;
-    }
+        .spec-table tr:last-child {
+            border-bottom: 0;
+        }
 
-    .actions {
-        flex-direction: column;
-    }
+        .spec-table td {
+            padding: 12px 0;
 
-    .secondary-button {
-        min-height: 43px;
-    }
-}
+            font-size: 12px;
+        }
 
-</style>
+        .spec-table td:first-child {
+            color: #77717f;
+
+            width: 42%;
+        }
+
+        .spec-table td:last-child {
+            color: #d5cedc;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================
+           OTHER PRODUCT FALLBACK
+        ========================================= */
+
+        .generic-product {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 45px;
+        }
+
+        .generic-card {
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(31,19,45,.95),
+                    rgba(11,8,17,.98)
+                );
+
+            border:
+                1px solid rgba(190,100,255,.14);
+        }
+
+        .generic-icon {
+            font-size: 80px;
+
+            margin-bottom: 25px;
+        }
+
+        .generic-card h1 {
+            font-size: 42px;
+        }
+
+        .generic-card p {
+            margin-top: 15px;
+
+            color: #99919f;
+
+            line-height: 1.7;
+        }
+
+        .generic-price {
+            margin-top: 30px;
+
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+
+        /* =========================================
+           TOAST
+        ========================================= */
+
+        .toast {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            z-index: 3000;
+
+            max-width: 350px;
+
+            padding: 16px 19px;
+
+            border-radius: 12px;
+
+            color: #ffffff;
+
+            background:
+                rgba(20,12,28,.96);
+
+            border:
+                1px solid rgba(190,100,255,.35);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.4);
+
+            font-size: 12px;
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            pointer-events: none;
+
+            transition: .3s;
+        }
+
+        .toast.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            padding: 50px 7% 25px;
+
+            background: #040308;
+
+            border-top:
+                1px solid rgba(255,255,255,.06);
+        }
+
+        .footer-inner {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .footer-text {
+            color: #66606d;
+
+            font-size: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: #77717f;
+
+            text-decoration: none;
+
+            font-size: 10px;
+        }
+
+        .footer-links a:hover {
+            color: #c477ff;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            .product-layout,
+            .generic-product {
+                grid-template-columns: 1fr;
+            }
+
+            .product-media {
+                position: static;
+            }
+
+            .product-image,
+            .product-image img,
+            .product-image-placeholder {
+                min-height: 430px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding:
+                    15px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .page {
+                padding:
+                    45px 5% 80px;
+            }
+
+            .product-title {
+                font-size: 40px;
+            }
+
+            .product-image,
+            .product-image img,
+            .product-image-placeholder {
+                min-height: 330px;
+            }
+
+            .included-list {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
 
-<!-- =========================================================
+<!-- =========================================
      NAVIGATION
-========================================================= -->
+========================================= -->
 
 <header class="navbar">
 
     <a
         href="index.html"
-        class="logo">
-
-        JOKER<span>NETWORK</span>
-
+        class="logo"
+    >
+        <span class="logo-joker">
+            JOKER
+        </span><span class="logo-network">
+            NETWORK
+        </span>
     </a>
 
-    <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open menu">
 
-        ☰
-
-    </button>
-
-    <ul
-        class="nav-links"
-        id="navLinks">
-
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-
-        <li>
-            <a
-                href="shop.html"
-                class="active">
-
-                Shop
-
-            </a>
-        </li>
-
-        <li>
-            <a href="joker-os.html">
-                Joker OS
-            </a>
-        </li>
-
-        <li>
-            <a href="games.html">
-                Games
-            </a>
-        </li>
-
-        <li>
-            <a href="login.html">
-                Login
-            </a>
-        </li>
-
-        <li>
-            <a href="account.html">
-                Account
-            </a>
-        </li>
-
-        <li>
-            <a href="donate.html">
-                Donate
-            </a>
-        </li>
-
-    </ul>
-
-</header>
-
-
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
-<main class="page">
-
-
-    <!-- BREADCRUMB -->
-
-    <div class="breadcrumb">
-
-        <a href="shop.html">
-            Shop
-        </a>
-
-        <span>›</span>
-
-        <span id="breadcrumbName">
-            Product
-        </span>
-
-    </div>
-
-
-    <!-- PRODUCT -->
-
-    <section
-        class="product-layout"
-        id="productLayout">
-
-
-        <!-- IMAGE -->
-
-        <div class="product-image-panel">
-
-            <img
-                id="productImage"
-                src="images/home-background.jpg"
-                alt="Product">
-
-        </div>
-
-
-        <!-- DETAILS -->
-
-        <div class="product-details">
-
-
-            <div
-                class="product-category"
-                id="productCategory">
-
-                PRODUCT
-
-            </div>
-
-
-            <h1
-                class="product-title"
-                id="productName">
-
-                Product
-
-            </h1>
-
-
-            <p
-                class="product-description"
-                id="productDescription">
-
-                Product information loading...
-
-            </p>
-
-
-            <!-- PRICE -->
-
-            <div class="price-box">
-
-                <div class="price-label">
-                    CURRENT PRICE
-                </div>
-
-                <div class="price">
-                    Price Coming Soon
-                </div>
-
-                <div class="price-note">
-                    Contact Joker Network for future pricing
-                    and availability.
-                </div>
-
-            </div>
-
-
-            <!-- WARRANTY -->
-
-            <div class="warranty-box">
-
-                <div class="warranty-title">
-                    🛡️ WARRANTY
-                </div>
-
-                <div
-                    class="warranty-text"
-                    id="productWarranty">
-
-                    Warranty information loading...
-
-                </div>
-
-            </div>
-
-
-            <!-- OPTIONS -->
-
-            <div
-                class="options-box"
-                id="optionsBox">
-
-
-                <!-- MONITOR -->
-
-                <div
-                    class="option-group"
-                    id="monitorOptions">
-
-                    <label for="monitorSize">
-                        Select Screen Size
-                    </label>
-
-                    <select
-                        id="monitorSize"
-                        class="option-select">
-
-                        <option value="19 Inch">
-                            19 Inch
-                        </option>
-
-                        <option value="21.5 Inch">
-                            21.5 Inch
-                        </option>
-
-                        <option value="22 Inch">
-                            22 Inch
-                        </option>
-
-                        <option value="24 Inch">
-                            24 Inch
-                        </option>
-
-                        <option value="27 Inch">
-                            27 Inch
-                        </option>
-
-                        <option value="32 Inch">
-                            32 Inch
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- RAM DDR -->
-
-                <div
-                    class="option-group"
-                    id="ramDdrOptions">
-
-                    <label for="ramDdr">
-                        Select RAM Generation
-                    </label>
-
-                    <select
-                        id="ramDdr"
-                        class="option-select">
-
-                        <option value="DDR3">
-                            DDR3
-                        </option>
-
-                        <option value="DDR4">
-                            DDR4
-                        </option>
-
-                        <option value="DDR5">
-                            DDR5
-                        </option>
-
-                        <option value="DDR6">
-                            DDR6
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- RAM CAPACITY -->
-
-                <div
-                    class="option-group"
-                    id="ramCapacityOptions">
-
-                    <label for="ramCapacity">
-                        Select RAM Capacity
-                    </label>
-
-                    <select
-                        id="ramCapacity"
-                        class="option-select">
-
-                        <option value="4 GB">
-                            4 GB
-                        </option>
-
-                        <option value="8 GB">
-                            8 GB
-                        </option>
-
-                        <option value="16 GB">
-                            16 GB
-                        </option>
-
-                        <option value="32 GB">
-                            32 GB
-                        </option>
-
-                        <option value="64 GB">
-                            64 GB
-                        </option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-
-            <!-- ACTIONS -->
-
-            <div class="actions">
-
-                <button
-                    class="primary-button"
-                    id="enquiryButton">
-
-                    Enquire / Buy Soon
-
-                </button>
-
-                <a
-                    href="shop.html"
-                    class="secondary-button">
-
-                    ← Back to Shop
-
-                </a>
-
-            </div>
-
-
-            <!-- DAMAGE NOTICE -->
-
-            <div class="damage-notice">
-
-                <h3>
-                    ⚠️ Physical Damage Notice
-                </h3>
-
-                <p>
-                    Warranty does not cover physical damage,
-                    accidental damage, liquid damage, misuse,
-                    unauthorized modification, improper
-                    installation or improper handling.
-                    Warranty terms may vary by brand and product.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PRODUCT INFO -->
-
-    <section class="info-section">
-
-        <div class="info-card">
-
-            <h3>
-                Product Availability
-            </h3>
-
-            <p>
-                Product price and availability will be
-                announced by Joker Network. Contact us
-                for current availability.
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>
-                Warranty
-            </h3>
-
-            <p>
-                Warranty depends on the product and
-                applicable Joker Tech or manufacturer
-                warranty terms.
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>
-                Product Support
-            </h3>
-
-            <p>
-                Joker Network can provide product
-                information and support according to
-                the applicable product terms.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- NOT FOUND -->
-
-    <section
-        class="not-found"
-        id="notFound">
-
-        <h1>
-            Product Not Found
-        </h1>
-
-        <p>
-            The product ID in this link does not exist
-            in the Joker Network product database.
-        </p>
-
-        <a href="shop.html">
-            Return to Shop
-        </a>
-
-    </section>
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-    <div class="footer-logo">
-        JOKER<span>NETWORK</span>
-    </div>
-
-    <p>
-        Joker Tech • Joker Gaming • Joker OS
-    </p>
-
-    <div class="footer-links">
+    <nav class="nav-links">
 
         <a href="index.html">
             Home
         </a>
 
-        <a href="shop.html">
+        <a
+            href="shop.html"
+            class="active nav-shop"
+        >
             Shop
         </a>
 
@@ -1230,317 +1011,1331 @@ footer p {
             Account
         </a>
 
-        <a href="donate.html">
-            Donate
+    </nav>
+
+</header>
+
+
+<!-- =========================================
+     PAGE
+========================================= -->
+
+<main class="page">
+
+
+    <div class="breadcrumb">
+
+        <a href="index.html">
+            Home
         </a>
+
+        &nbsp; / &nbsp;
+
+        <a href="shop.html">
+            Shop
+        </a>
+
+        &nbsp; / &nbsp;
+
+        <span id="breadcrumbProduct">
+            Product
+        </span>
+
+    </div>
+
+
+    <!-- =========================================
+         BASIC PC PRODUCT
+    ========================================= -->
+
+    <section
+        id="basicProduct"
+        class="product-layout"
+        style="display:none;"
+    >
+
+
+        <!-- PRODUCT IMAGE -->
+
+        <div class="product-media">
+
+            <div class="product-image">
+
+                <span class="product-badge">
+                    JOKER TECH
+                </span>
+
+                <img
+                    src="images/joker-pc-01.jpg"
+                    alt="Joker Tech Basic PC"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT INFORMATION -->
+
+        <div class="product-info">
+
+            <span class="product-category">
+                JOKER TECH • BASIC PC
+            </span>
+
+
+            <h1 class="product-title">
+                Joker Tech
+                <br>
+                Basic PC
+            </h1>
+
+
+            <p class="product-description">
+
+                An affordable, upgrade-friendly desktop
+                for everyday computing, study, office work,
+                browsing and basic gaming.
+
+            </p>
+
+
+            <!-- CONFIGURATOR -->
+
+            <div class="configurator">
+
+
+                <div class="configurator-heading">
+
+                    <h2>
+                        Configure Your PC
+                    </h2>
+
+                    <span>
+                        LIVE PRICE
+                    </span>
+
+                </div>
+
+
+                <!-- PROCESSOR -->
+
+                <div class="option-group">
+
+                    <div class="option-label">
+
+                        <strong>
+                            Processor
+                        </strong>
+
+                        <span>
+                            Select CPU
+                        </span>
+
+                    </div>
+
+
+                    <select
+                        id="cpuSelect"
+                        class="option-select"
+                    >
+
+                        <option value="i3">
+                            Intel Core i3 — 2nd / 3rd Gen
+                        </option>
+
+                        <option value="i5">
+                            Intel Core i5 — 2nd / 3rd Gen
+                        </option>
+
+                        <option value="i7">
+                            Intel Core i7 — 2nd / 3rd Gen
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RAM -->
+
+                <div class="option-group">
+
+                    <div class="option-label">
+
+                        <strong>
+                            RAM
+                        </strong>
+
+                        <span>
+                            DDR3
+                        </span>
+
+                    </div>
+
+
+                    <select
+                        id="ramSelect"
+                        class="option-select"
+                    >
+
+                        <option value="4">
+                            4GB DDR3
+                        </option>
+
+                        <option value="8">
+                            8GB DDR3
+                        </option>
+
+                        <option value="16">
+                            16GB DDR3
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- STORAGE -->
+
+                <div class="option-group">
+
+                    <div class="option-label">
+
+                        <strong>
+                            Storage
+                        </strong>
+
+                        <span>
+                            Choose one
+                        </span>
+
+                    </div>
+
+
+                    <select
+                        id="storageSelect"
+                        class="option-select"
+                    >
+
+                        <option value="hdd500">
+                            500GB HDD — Included
+                        </option>
+
+                        <option value="ssd128">
+                            128GB SSD — +₹500
+                        </option>
+
+                        <option value="ssd256">
+                            256GB SSD — +₹900
+                        </option>
+
+                        <option value="ssd512">
+                            512GB SSD — +₹1,500
+                        </option>
+
+                        <option value="hdd1tb">
+                            1TB HDD — +₹700
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- GRAPHICS -->
+
+                <div class="option-group">
+
+                    <div class="option-label">
+
+                        <strong>
+                            Graphics
+                        </strong>
+
+                        <span>
+                            Select type
+                        </span>
+
+                    </div>
+
+
+                    <select
+                        id="graphicsSelect"
+                        class="option-select"
+                    >
+
+                        <option value="integrated">
+                            Integrated Graphics — Included
+                        </option>
+
+                        <option value="external">
+                            External Graphics Card — Optional
+                        </option>
+
+                    </select>
+
+
+                    <div class="gpu-note">
+
+                        <strong>
+                            External GPU:
+                        </strong>
+
+                        GPU pricing will depend on the
+                        graphics card selected. Contact Joker
+                        Network for the available graphics-card
+                        options.
+
+                    </div>
+
+                </div>
+
+
+                <!-- INCLUDED -->
+
+                <div class="included-box">
+
+                    <h3>
+                        Included With Every PC
+                    </h3>
+
+
+                    <div class="included-list">
+
+                        <div class="included-item">
+                            Monitor
+                        </div>
+
+                        <div class="included-item">
+                            Keyboard
+                        </div>
+
+                        <div class="included-item">
+                            Mouse
+                        </div>
+
+                        <div class="included-item">
+                            Classic Basic Speaker
+                        </div>
+
+                        <div class="included-item">
+                            Classic PC Cabinet
+                        </div>
+
+                        <div class="included-item">
+                            Ant Esports 500 VA SMPS
+                        </div>
+
+                        <div class="included-item">
+                            H61 Motherboard
+                        </div>
+
+                        <div class="included-item">
+                            Integrated Graphics
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRICE -->
+
+                <div class="price-box">
+
+                    <div class="price-row">
+
+                        <div>
+
+                            <div class="price-label">
+                                MRP
+                            </div>
+
+                            <div
+                                id="mrpPrice"
+                                class="mrp"
+                            >
+                                ₹12,999
+                            </div>
+
+                        </div>
+
+
+                        <div style="text-align:right;">
+
+                            <div class="price-label">
+                                JOKER FINAL PRICE
+                            </div>
+
+                            <div
+                                id="finalPrice"
+                                class="final-price"
+                            >
+                                <span>₹</span>10,999
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="savingText"
+                        class="saving"
+                    >
+                        You save ₹2,000
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="product-actions">
+
+                    <button
+                        type="button"
+                        id="cartButton"
+                        class="action-button action-primary"
+                    >
+                        🛒 Add Configuration
+                    </button>
+
+
+                    <a
+                        href="shop.html"
+                        class="action-button action-secondary"
+                    >
+                        ← Back to Shop
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         GENERIC PRODUCT
+    ========================================= -->
+
+    <section
+        id="genericProduct"
+        class="generic-product"
+        style="display:none;"
+    >
+
+        <div class="generic-card">
+
+            <div
+                id="genericIcon"
+                class="generic-icon"
+            >
+                🛒
+            </div>
+
+            <h1 id="genericTitle">
+                Product
+            </h1>
+
+            <p id="genericDescription">
+                Joker Network product.
+            </p>
+
+            <div
+                id="genericPrice"
+                class="generic-price"
+            >
+                Price Coming Soon
+            </div>
+
+        </div>
+
+
+        <div class="generic-card">
+
+            <h2>
+                Product Information
+            </h2>
+
+            <p>
+                This product is part of the Joker Network
+                technology collection.
+            </p>
+
+            <br>
+
+            <p>
+                Product specifications, availability and
+                pricing will be updated by Joker Network.
+            </p>
+
+            <br>
+
+            <a
+                href="shop.html"
+                class="action-button action-primary"
+                style="display:inline-block;"
+            >
+                ← Back to Shop
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         BASIC PC DETAILS
+    ========================================= -->
+
+    <section
+        id="basicDetails"
+        class="details-section"
+        style="display:none;"
+    >
+
+        <div class="details-grid">
+
+
+            <div class="detail-card">
+
+                <h3>
+                    🖥️ Technical Specifications
+                </h3>
+
+
+                <table class="spec-table">
+
+                    <tr>
+                        <td>
+                            Motherboard
+                        </td>
+
+                        <td>
+                            H61
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Processor
+                        </td>
+
+                        <td id="specCpu">
+                            Intel Core i3
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Generation
+                        </td>
+
+                        <td>
+                            2nd / 3rd Gen
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Memory
+                        </td>
+
+                        <td id="specRam">
+                            4GB DDR3
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Storage
+                        </td>
+
+                        <td id="specStorage">
+                            500GB HDD
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Graphics
+                        </td>
+
+                        <td id="specGraphics">
+                            Integrated Graphics
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <h3>
+                    📦 Package Includes
+                </h3>
+
+
+                <table class="spec-table">
+
+                    <tr>
+                        <td>
+                            Display
+                        </td>
+
+                        <td>
+                            Monitor
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Keyboard
+                        </td>
+
+                        <td>
+                            Included
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Mouse
+                        </td>
+
+                        <td>
+                            Included
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Speaker
+                        </td>
+
+                        <td>
+                            Classic Basic Speaker
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Cabinet
+                        </td>
+
+                        <td>
+                            Classic PC Cabinet
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            SMPS
+                        </td>
+
+                        <td>
+                            Ant Esports 500 VA
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-text">
+
+            © 2026 Joker Network.
+            All rights reserved.
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="joker-os.html">
+                Joker OS
+            </a>
+
+            <a href="donate.html">
+                Support
+            </a>
+
+        </div>
 
     </div>
 
 </footer>
 
 
+<!-- =========================================
+     TOAST
+========================================= -->
+
+<div
+    id="toast"
+    class="toast"
+>
+    Configuration added.
+</div>
+
+
 <script>
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+/* =========================================
+   JOKER TECH BASIC PC PRICING
+========================================= */
 
-const menuButton =
-    document.getElementById("menuButton");
+const basicPricing = {
 
-const navLinks =
-    document.getElementById("navLinks");
+    i3: {
 
-menuButton.addEventListener("click", () => {
+        4: {
+            mrp: 12999,
+            price: 10999
+        },
 
-    navLinks.classList.toggle("show");
+        8: {
+            mrp: 15999,
+            price: 14999
+        },
 
-});
+        16: {
+            mrp: 19999,
+            price: 17499
+        }
 
-
-/* =========================================================
-   PRODUCT DATABASE
-   IDs MUST MATCH shop.html
-========================================================= */
-
-const products = {
-
-    "joker-pc-01": {
-        name: "Basic PC",
-        category: "PC & Workstation",
-        image: "images/joker-pc-01.jpg",
-        warranty: "2 Years Desktop Warranty • 1 Year Accessories Warranty",
-        description:
-            "An affordable Joker Tech desktop designed for study, office work, browsing, entertainment and everyday computing."
     },
 
-    "joker-pc-02": {
-        name: "Gaming & Editing PC",
-        category: "Gaming PC",
-        image: "images/joker-pc-02.jpg",
-        warranty: "5 Years Desktop Warranty • 1 Year Accessories Warranty",
-        description:
-            "A performance-focused PC designed for gaming, video editing, content creation and demanding desktop workloads."
+
+    i5: {
+
+        4: {
+            mrp: 15999,
+            price: 14999
+        },
+
+        8: {
+            mrp: 17999,
+            price: 16999
+        },
+
+        16: {
+            mrp: 18999,
+            price: 17499
+        }
+
     },
 
-    "joker-pc-03": {
-        name: "PS & Xbox Killer PC",
-        category: "Gaming PC",
-        image: "images/joker-pc-03.jpg",
-        warranty: "4 Years Desktop Warranty • 1 Year Accessories Warranty",
-        description:
-            "A powerful Joker gaming PC designed to deliver a console-style gaming experience with PC flexibility."
-    },
 
-    "joker-pc-04": {
-        name: "Brand PC SMPS",
-        category: "Power Supply",
-        image: "images/joker-pc-04.jpg",
-        warranty: "Brand SMPS: 3 Years Warranty • Other SMPS: 1 Year Warranty",
-        description:
-            "PC power supply options for different desktop configurations. Warranty depends on the selected SMPS brand."
-    },
+    i7: {
 
-    "keyboard-mouse-combo": {
-        name: "Keyboard & Mouse Combo",
-        category: "Keyboard & Mouse",
-        image: "images/keyboard-mouse-combo.jpg",
-        warranty: "1 Year Warranty",
-        description:
-            "A practical keyboard and mouse combination for desktop computers, office work, study and everyday use."
-    },
+        4: {
+            mrp: 20999,
+            price: 17999
+        },
 
-    "gaming-keyboard": {
-        name: "Gaming Keyboard",
-        category: "Gaming",
-        image: "images/gaming-keyboard.jpg",
-        warranty: "1 Year Warranty",
-        description:
-            "Gaming keyboard designed for PC gaming, fast controls and a dedicated gaming setup."
-    },
+        8: {
+            mrp: 21999,
+            price: 18999
+        },
 
-    "gaming-mouse": {
-        name: "Gaming Mouse",
-        category: "Gaming",
-        image: "images/gaming-mouse.jpg",
-        warranty: "1 Year Warranty",
-        description:
-            "Gaming mouse designed for accurate control and responsive PC gaming."
-    },
+        16: {
+            mrp: 22999,
+            price: 19999
+        }
 
-    "monitor": {
-        name: "Monitor",
-        category: "Display",
-        image: "images/monitor.jpg",
-        warranty: "1 Year Warranty",
-        description:
-            "Computer monitor with multiple screen-size options. Select the screen size you want before making an enquiry."
-    },
-
-    "ram": {
-        name: "RAM",
-        category: "Memory",
-        image: "images/ram.jpg",
-        warranty: "Joker Tech Support: 3 Years • Brand Warranty May Also Apply",
-        description:
-            "Desktop memory options with DDR3, DDR4, DDR5 and DDR6 selections. Select the generation and capacity you need."
-    },
-
-    "graphics-card": {
-        name: "Graphics Card",
-        category: "Graphics",
-        image: "images/graphics-card.jpg",
-        warranty: "3 Years Warranty",
-        description:
-            "Graphics card options for gaming, video editing, 3D workloads and graphics-intensive applications."
-    },
-
-    "mouse-mat": {
-        name: "Mouse Mat",
-        category: "Gaming Accessories",
-        image: "images/mouse-mat.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Mouse mat options for gaming desks and computer workstations."
-    },
-
-    "usb-speaker": {
-        name: "USB Speaker",
-        category: "Audio",
-        image: "images/usb-speaker.jpg",
-        warranty: "1 Year Warranty",
-        description:
-            "Compact USB speaker suitable for computers, laptops and everyday multimedia."
-    },
-
-    "motherboard": {
-        name: "PC Motherboard",
-        category: "Components",
-        image: "images/motherboard.jpg",
-        warranty: "1 Year Warranty",
-        description:
-            "PC motherboard options for compatible processors, memory, storage and other computer components."
-    },
-
-    "computer-ups": {
-        name: "Computer UPS",
-        category: "Power",
-        image: "images/computer-ups.jpg",
-        warranty: "1 Year Warranty",
-        description:
-            "UPS backup power solution for desktop computers and compatible equipment."
-    },
-
-    "hdmi-cable": {
-        name: "HDMI Cable",
-        category: "Cables",
-        image: "images/hdmi-cable.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "HDMI cable for compatible computers, monitors, televisions and other HDMI devices."
-    },
-
-    "vga-cable": {
-        name: "VGA Cable",
-        category: "Cables",
-        image: "images/vga-cable.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "VGA display cable for compatible desktop computers and monitors."
-    },
-
-    "external-usb-port": {
-        name: "External USB Port",
-        category: "USB Accessories",
-        image: "images/external-usb-port.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "External USB connectivity accessory for compatible computer setups."
-    },
-
-    "wifi": {
-        name: "Wi-Fi",
-        category: "Networking",
-        image: "images/wifi.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Wi-Fi connectivity hardware for compatible desktop computers and other devices."
-    },
-
-    "home-theatre": {
-        name: "Home Theatre",
-        category: "Audio",
-        image: "images/home-theatre.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Home theatre equipment for entertainment and home audio setups."
-    },
-
-    "gaming-headset": {
-        name: "Gaming Headset",
-        category: "Gaming Audio",
-        image: "images/gaming-headset.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Gaming headset for immersive game audio, communication and entertainment."
-    },
-
-    "gaming-mic": {
-        name: "Gaming Mic",
-        category: "Gaming Audio",
-        image: "images/gaming-mic.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Gaming microphone suitable for gaming, streaming, voice chat and content creation."
-    },
-
-    "gaming-light": {
-        name: "Gaming Light",
-        category: "Gaming Accessories",
-        image: "images/gaming-light.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Gaming lighting accessories for PC desks, gaming rooms and streaming setups."
-    },
-
-    "gaming-table-chair": {
-        name: "Gaming Table & Chairs",
-        category: "Gaming Furniture",
-        image: "images/gaming-table-chair.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Gaming table and chair options for comfortable PC gaming and workstation setups."
-    },
-
-    "hdd": {
-        name: "HDD",
-        category: "Storage",
-        image: "images/hdd.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Hard disk drive storage options for desktop computers and external storage solutions."
-    },
-
-    "ssd": {
-        name: "SSD",
-        category: "Storage",
-        image: "images/ssd.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Solid-state drive options designed to improve system storage performance and responsiveness."
-    },
-
-    "external-usb-drive-case": {
-        name: "External USB SSD / HDD Case",
-        category: "Storage Accessories",
-        image: "images/external-usb-drive-case.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "External USB enclosure for compatible SSD and HDD drives."
-    },
-
-    "pc-power-cable": {
-        name: "PC Power Cable",
-        category: "Power Cable",
-        image: "images/pc-power-cable.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Power cable designed for compatible desktop computer power connections."
-    },
-
-    "5-point-socket-box": {
-        name: "5-Point Socket Switch Box",
-        category: "Power",
-        image: "images/5-point-socket-box.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Five-point socket switch box with 5 amp plugs for compatible computer and electronics setups."
-    },
-
-    "wireless-mouse": {
-        name: "Wireless Mouse",
-        category: "Keyboard & Mouse",
-        image: "images/wireless-mouse.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Wireless mouse for desktop computers, laptops, study and everyday productivity."
-    },
-
-    "wireless-keyboard": {
-        name: "Wireless Keyboard",
-        category: "Keyboard & Mouse",
-        image: "images/wireless-keyboard.jpg",
-        warranty: "Warranty Details Coming Soon",
-        description:
-            "Wireless keyboard for desktop computers, laptops and everyday computer use."
     }
 
 };
 
 
-/* =========================================================
-   GET PRODUCT ID FROM URL
-========================================================= */
+/* =========================================
+   STORAGE PRICES
+========================================= */
+
+const storagePricing = {
+
+    hdd500: {
+        name: "500GB HDD",
+        mrp: 0,
+        price: 0
+    },
+
+    ssd128: {
+        name: "128GB SSD",
+        mrp: 500,
+        price: 500
+    },
+
+    ssd256: {
+        name: "256GB SSD",
+        mrp: 900,
+        price: 900
+    },
+
+    ssd512: {
+        name: "512GB SSD",
+        mrp: 1500,
+        price: 1500
+    },
+
+    hdd1tb: {
+        name: "1TB HDD",
+        mrp: 700,
+        price: 700
+    }
+
+};
+
+
+/* =========================================
+   PRODUCT DATABASE
+========================================= */
+
+const products = {
+
+    "joker-tech-basic": {
+
+        title: "Joker Tech Basic PC",
+
+        category: "Joker Tech • Basic PC",
+
+        icon: "🖥️",
+
+        description:
+            "Affordable and upgrade-friendly desktop for everyday computing, study, office work, browsing and basic gaming.",
+
+        price: "From ₹10,999"
+
+    },
+
+
+    "basic-pc": {
+
+        title: "Joker Tech Basic PC",
+
+        category: "Joker Tech • Basic PC",
+
+        icon: "🖥️",
+
+        description:
+            "Affordable and upgrade-friendly desktop for everyday computing, study, office work, browsing and basic gaming.",
+
+        price: "From ₹10,999"
+
+    },
+
+
+    "gaming-editing-pc": {
+
+        title: "Gaming & Editing PC",
+
+        category: "Joker Gaming",
+
+        icon: "🎮",
+
+        description:
+            "A performance-focused computer for gaming, editing and demanding everyday workloads.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "ps-xbox-killer-pc": {
+
+        title: "PS / Xbox Killer PC",
+
+        category: "Joker Gaming",
+
+        icon: "🔥",
+
+        description:
+            "Ultra Pro gaming PC concept designed for high-performance gaming.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "brand-pc-smps": {
+
+        title: "Brand PC SMPS",
+
+        category: "Power",
+
+        icon: "⚡",
+
+        description:
+            "Reliable power supply options for desktop systems.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "keyboard-mouse-combo": {
+
+        title: "Keyboard + Mouse Combo",
+
+        category: "Accessories",
+
+        icon: "⌨️",
+
+        description:
+            "Practical keyboard and mouse combo for everyday computing.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "gaming-keyboard": {
+
+        title: "Gaming Keyboard",
+
+        category: "Gaming Gear",
+
+        icon: "⌨️",
+
+        description:
+            "Gaming keyboard for responsive gameplay and everyday use.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "gaming-mouse": {
+
+        title: "Gaming Mouse",
+
+        category: "Gaming Gear",
+
+        icon: "🖱️",
+
+        description:
+            "Gaming mouse designed for accurate control.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "monitor": {
+
+        title: "Monitor",
+
+        category: "Display",
+
+        icon: "🖥️",
+
+        description:
+            "PC monitors for gaming, work and entertainment.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "ram": {
+
+        title: "RAM",
+
+        category: "Memory",
+
+        icon: "🧠",
+
+        description:
+            "Desktop memory upgrade options.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "graphics-card": {
+
+        title: "Graphics Card",
+
+        category: "Graphics",
+
+        icon: "🎨",
+
+        description:
+            "Graphics hardware for gaming and creative workloads.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "mouse-mat": {
+
+        title: "Mouse Mat",
+
+        category: "Accessories",
+
+        icon: "🖱️",
+
+        description:
+            "Mouse mats for smooth and comfortable control.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "usb-speaker": {
+
+        title: "USB Speaker",
+
+        category: "Audio",
+
+        icon: "🔊",
+
+        description:
+            "Compact USB speakers for your PC setup.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "pc-motherboard": {
+
+        title: "PC Motherboard",
+
+        category: "PC Components",
+
+        icon: "🧩",
+
+        description:
+            "Desktop motherboard options.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "ups": {
+
+        title: "UPS",
+
+        category: "Power",
+
+        icon: "🔋",
+
+        description:
+            "Backup power solutions for desktop systems.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "hdmi-cable": {
+
+        title: "HDMI Cable",
+
+        category: "Cables",
+
+        icon: "🔌",
+
+        description:
+            "HDMI connectivity for monitors and displays.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "vga-cable": {
+
+        title: "VGA Cable",
+
+        category: "Cables",
+
+        icon: "🔌",
+
+        description:
+            "VGA display connectivity cable.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "external-usb-port": {
+
+        title: "External USB Port",
+
+        category: "Accessories",
+
+        icon: "🔌",
+
+        description:
+            "Additional USB connectivity for your computer.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "wifi": {
+
+        title: "Wi-Fi Adapter",
+
+        category: "Networking",
+
+        icon: "📶",
+
+        description:
+            "Wireless connectivity for compatible PCs.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "home-theatre": {
+
+        title: "Home Theatre",
+
+        category: "Audio",
+
+        icon: "🔊",
+
+        description:
+            "Audio entertainment system for your setup.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "gaming-headset": {
+
+        title: "Gaming Headset",
+
+        category: "Gaming Audio",
+
+        icon: "🎧",
+
+        description:
+            "Gaming headset for immersive audio.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "gaming-mic": {
+
+        title: "Gaming Microphone",
+
+        category: "Gaming Audio",
+
+        icon: "🎙️",
+
+        description:
+            "Microphone for gaming, streaming and communication.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "gaming-light": {
+
+        title: "Gaming Light",
+
+        category: "Gaming Setup",
+
+        icon: "💡",
+
+        description:
+            "Lighting accessories for your gaming setup.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "gaming-table-chair": {
+
+        title: "Gaming Table & Chair",
+
+        category: "Gaming Setup",
+
+        icon: "🪑",
+
+        description:
+            "Gaming furniture for a comfortable setup.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "hdd": {
+
+        title: "Hard Disk Drive",
+
+        category: "Storage",
+
+        icon: "💾",
+
+        description:
+            "Reliable HDD storage options.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "ssd": {
+
+        title: "SSD",
+
+        category: "Storage",
+
+        icon: "💾",
+
+        description:
+            "Fast solid-state storage options.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "external-usb-case": {
+
+        title: "External USB SSD / HDD Case",
+
+        category: "Storage Accessories",
+
+        icon: "💽",
+
+        description:
+            "External enclosure for compatible storage drives.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "pc-power-cable": {
+
+        title: "PC Power Cable",
+
+        category: "Cables",
+
+        icon: "🔌",
+
+        description:
+            "Power cable for compatible desktop systems.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "5-point-socket-switch-box": {
+
+        title: "5 Point Socket Switch Box",
+
+        category: "Power Accessories",
+
+        icon: "⚡",
+
+        description:
+            "Multi-socket power solution for your setup.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "wireless-mouse": {
+
+        title: "Wireless Mouse",
+
+        category: "Accessories",
+
+        icon: "🖱️",
+
+        description:
+            "Wireless mouse for everyday computing.",
+
+        price: "Price Coming Soon"
+
+    },
+
+
+    "wireless-keyboard": {
+
+        title: "Wireless Keyboard",
+
+        category: "Accessories",
+
+        icon: "⌨️",
+
+        description:
+            "Wireless keyboard for a clean desktop setup.",
+
+        price: "Price Coming Soon"
+
+    }
+
+};
+
+
+/* =========================================
+   GET PRODUCT ID
+========================================= */
 
 const params =
     new URLSearchParams(
@@ -1548,283 +2343,484 @@ const params =
     );
 
 const productId =
-    params.get("id");
+    (
+        params.get("id") ||
+        "joker-tech-basic"
+    ).toLowerCase();
 
 
-/* =========================================================
+/* =========================================
    ELEMENTS
-========================================================= */
+========================================= */
 
-const productLayout =
+const basicProduct =
     document.getElementById(
-        "productLayout"
+        "basicProduct"
     );
 
-const notFound =
+const basicDetails =
     document.getElementById(
-        "notFound"
+        "basicDetails"
     );
 
-const productImage =
+const genericProduct =
     document.getElementById(
-        "productImage"
+        "genericProduct"
     );
 
-const productCategory =
+const breadcrumbProduct =
     document.getElementById(
-        "productCategory"
-    );
-
-const productName =
-    document.getElementById(
-        "productName"
-    );
-
-const productDescription =
-    document.getElementById(
-        "productDescription"
-    );
-
-const productWarranty =
-    document.getElementById(
-        "productWarranty"
-    );
-
-const breadcrumbName =
-    document.getElementById(
-        "breadcrumbName"
-    );
-
-const optionsBox =
-    document.getElementById(
-        "optionsBox"
-    );
-
-const monitorOptions =
-    document.getElementById(
-        "monitorOptions"
-    );
-
-const ramDdrOptions =
-    document.getElementById(
-        "ramDdrOptions"
-    );
-
-const ramCapacityOptions =
-    document.getElementById(
-        "ramCapacityOptions"
-    );
-
-const enquiryButton =
-    document.getElementById(
-        "enquiryButton"
+        "breadcrumbProduct"
     );
 
 
-/* =========================================================
-   IMAGE FALLBACK
-========================================================= */
+/* =========================================
+   BASIC PRODUCT
+========================================= */
 
-productImage.addEventListener(
-    "error",
-    () => {
+function showBasicProduct() {
 
-        productImage.src =
-            "images/home-background.jpg";
+    basicProduct.style.display =
+        "grid";
 
-    }
-);
+    basicDetails.style.display =
+        "block";
 
-
-/* =========================================================
-   SHOW PRODUCT
-========================================================= */
-
-function loadProduct() {
-
-    const product =
-        products[productId];
-
-
-    if (!product) {
-
-        productLayout.style.display =
-            "none";
-
-        notFound.style.display =
-            "block";
-
-        document.title =
-            "Joker Network | Product Not Found";
-
-        return;
-    }
-
-
-    /* BASIC DETAILS */
-
-    productImage.src =
-        product.image;
-
-    productImage.alt =
-        product.name;
-
-    productCategory.textContent =
-        product.category;
-
-    productName.textContent =
-        product.name;
-
-    productDescription.textContent =
-        product.description;
-
-    productWarranty.textContent =
-        product.warranty;
-
-    breadcrumbName.textContent =
-        product.name;
-
-
-    document.title =
-        `Joker Network | ${product.name}`;
-
-
-    /* OPTIONS */
-
-    monitorOptions.style.display =
+    genericProduct.style.display =
         "none";
 
-    ramDdrOptions.style.display =
-        "none";
+    breadcrumbProduct.textContent =
+        "Joker Tech Basic PC";
 
-    ramCapacityOptions.style.display =
-        "none";
-
-
-    if (productId === "monitor") {
-
-        optionsBox.style.display =
-            "block";
-
-        monitorOptions.style.display =
-            "block";
-
-    }
-
-
-    if (productId === "ram") {
-
-        optionsBox.style.display =
-            "block";
-
-        ramDdrOptions.style.display =
-            "block";
-
-        ramCapacityOptions.style.display =
-            "block";
-
-    }
+    updateBasicPrice();
 
 }
 
 
-/* =========================================================
-   ENQUIRY BUTTON
-========================================================= */
+/* =========================================
+   GENERIC PRODUCT
+========================================= */
 
-enquiryButton.addEventListener(
-    "click",
-    () => {
+function showGenericProduct(product) {
 
-        const product =
-            products[productId];
+    basicProduct.style.display =
+        "none";
 
+    basicDetails.style.display =
+        "none";
 
-        if (!product) {
-            return;
-        }
-
-
-        let selectedOptions = "";
+    genericProduct.style.display =
+        "grid";
 
 
-        if (productId === "monitor") {
+    document.getElementById(
+        "genericIcon"
+    ).textContent =
+        product.icon;
 
-            const size =
+
+    document.getElementById(
+        "genericTitle"
+    ).textContent =
+        product.title;
+
+
+    document.getElementById(
+        "genericDescription"
+    ).textContent =
+        product.description;
+
+
+    document.getElementById(
+        "genericPrice"
+    ).textContent =
+        product.price;
+
+
+    breadcrumbProduct.textContent =
+        product.title;
+
+}
+
+
+/* =========================================
+   PRICE UPDATE
+========================================= */
+
+function updateBasicPrice() {
+
+    const cpu =
+        document.getElementById(
+            "cpuSelect"
+        ).value;
+
+    const ram =
+        document.getElementById(
+            "ramSelect"
+        ).value;
+
+    const storage =
+        document.getElementById(
+            "storageSelect"
+        ).value;
+
+
+    const base =
+        basicPricing[cpu][ram];
+
+
+    const storageData =
+        storagePricing[storage];
+
+
+    const finalPrice =
+        base.price +
+        storageData.price;
+
+
+    const finalMrp =
+        base.mrp +
+        storageData.mrp;
+
+
+    const saving =
+        finalMrp -
+        finalPrice;
+
+
+    document.getElementById(
+        "mrpPrice"
+    ).textContent =
+        "₹" +
+        finalMrp.toLocaleString(
+            "en-IN"
+        );
+
+
+    document.getElementById(
+        "finalPrice"
+    ).innerHTML =
+        "<span>₹</span>" +
+        finalPrice.toLocaleString(
+            "en-IN"
+        );
+
+
+    document.getElementById(
+        "savingText"
+    ).textContent =
+        "You save ₹" +
+        saving.toLocaleString(
+            "en-IN"
+        );
+
+
+    updateSpecifications(
+        cpu,
+        ram,
+        storage
+    );
+
+}
+
+
+/* =========================================
+   SPECIFICATIONS
+========================================= */
+
+function updateSpecifications(
+    cpu,
+    ram,
+    storage
+) {
+
+    const cpuName = {
+
+        i3:
+            "Intel Core i3 — 2nd / 3rd Gen",
+
+        i5:
+            "Intel Core i5 — 2nd / 3rd Gen",
+
+        i7:
+            "Intel Core i7 — 2nd / 3rd Gen"
+
+    };
+
+
+    const graphics =
+        document.getElementById(
+            "graphicsSelect"
+        ).value;
+
+
+    document.getElementById(
+        "specCpu"
+    ).textContent =
+        cpuName[cpu];
+
+
+    document.getElementById(
+        "specRam"
+    ).textContent =
+        ram + "GB DDR3";
+
+
+    document.getElementById(
+        "specStorage"
+    ).textContent =
+        storagePricing[storage].name;
+
+
+    document.getElementById(
+        "specGraphics"
+    ).textContent =
+        graphics === "external"
+            ? "External Graphics Card — Optional"
+            : "Integrated Graphics";
+
+}
+
+
+/* =========================================
+   SELECT EVENTS
+========================================= */
+
+document
+    .getElementById("cpuSelect")
+    .addEventListener(
+        "change",
+        updateBasicPrice
+    );
+
+
+document
+    .getElementById("ramSelect")
+    .addEventListener(
+        "change",
+        updateBasicPrice
+    );
+
+
+document
+    .getElementById("storageSelect")
+    .addEventListener(
+        "change",
+        updateBasicPrice
+    );
+
+
+document
+    .getElementById("graphicsSelect")
+    .addEventListener(
+        "change",
+        updateBasicPrice
+    );
+
+
+/* =========================================
+   ADD CONFIGURATION
+========================================= */
+
+document
+    .getElementById("cartButton")
+    .addEventListener(
+        "click",
+        function() {
+
+            const cpu =
                 document.getElementById(
-                    "monitorSize"
+                    "cpuSelect"
                 ).value;
 
-            selectedOptions =
-                `\nScreen Size: ${size}`;
-
-        }
-
-
-        if (productId === "ram") {
-
-            const ddr =
+            const ram =
                 document.getElementById(
-                    "ramDdr"
+                    "ramSelect"
                 ).value;
 
-            const capacity =
+            const storage =
                 document.getElementById(
-                    "ramCapacity"
+                    "storageSelect"
                 ).value;
 
-            selectedOptions =
-                `\nRAM: ${ddr}\nCapacity: ${capacity}`;
+            const graphics =
+                document.getElementById(
+                    "graphicsSelect"
+                ).value;
+
+
+            const base =
+                basicPricing[cpu][ram];
+
+
+            const storageData =
+                storagePricing[storage];
+
+
+            const finalPrice =
+                base.price +
+                storageData.price;
+
+
+            const cpuName = {
+
+                i3:
+                    "Intel Core i3 — 2nd / 3rd Gen",
+
+                i5:
+                    "Intel Core i5 — 2nd / 3rd Gen",
+
+                i7:
+                    "Intel Core i7 — 2nd / 3rd Gen"
+
+            };
+
+
+            const configuration = {
+
+                product:
+                    "Joker Tech Basic PC",
+
+                processor:
+                    cpuName[cpu],
+
+                ram:
+                    ram + "GB DDR3",
+
+                storage:
+                    storageData.name,
+
+                graphics:
+                    graphics === "external"
+                        ? "External Graphics Card"
+                        : "Integrated Graphics",
+
+                price:
+                    finalPrice,
+
+                currency:
+                    "INR"
+
+            };
+
+
+            localStorage.setItem(
+                "jokerCartConfiguration",
+                JSON.stringify(
+                    configuration
+                )
+            );
+
+
+            showToast(
+                "Joker Tech configuration saved — ₹" +
+                finalPrice.toLocaleString(
+                    "en-IN"
+                )
+            );
 
         }
+    );
 
 
-        const message =
-            `Hello Joker Network,
+/* =========================================
+   TOAST
+========================================= */
 
-I am interested in:
+function showToast(message) {
 
-Product: ${product.name}
-Product ID: ${productId}
-Category: ${product.category}
-Price: Coming Soon
-${selectedOptions}
-
-Please provide availability and pricing.`;
+    const toast =
+        document.getElementById(
+            "toast"
+        );
 
 
-        /*
-         * WhatsApp number can be connected here later.
-         *
-         * Example:
-         *
-         * const phone = "91XXXXXXXXXX";
-         * window.open(
-         *     "https://wa.me/" +
-         *     phone +
-         *     "?text=" +
-         *     encodeURIComponent(message),
-         *     "_blank"
-         * );
-         *
-         * Currently we show the enquiry text instead.
-         */
+    toast.textContent =
+        message;
 
 
-        alert(message);
+    toast.classList.add(
+        "show"
+    );
 
-    }
-);
+
+    setTimeout(
+        function() {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        3000
+    );
+
+}
 
 
-/* =========================================================
-   LOAD PRODUCT
-========================================================= */
+/* =========================================
+   INITIALIZE PRODUCT
+========================================= */
 
-loadProduct();
+if (
+    productId ===
+        "joker-tech-basic" ||
+
+    productId ===
+        "basic-pc"
+) {
+
+    showBasicProduct();
+
+} else if (
+    products[productId]
+) {
+
+    showGenericProduct(
+        products[productId]
+    );
+
+} else {
+
+    showGenericProduct({
+
+        title:
+            "Joker Network Product",
+
+        category:
+            "Joker Network",
+
+        icon:
+            "🃏",
+
+        description:
+            "This Joker Network product could not be identified. Please return to the shop and select a product.",
+
+        price:
+            "Price Coming Soon"
+
+    });
+
+}
+
+
+/* =========================================
+   INITIAL SPEC UPDATE
+========================================= */
+
+if (
+    productId ===
+        "joker-tech-basic" ||
+
+    productId ===
+        "basic-pc"
+) {
+
+    updateBasicPrice();
+
+}
 
 </script>
 
 </body>
 </html>
-```
