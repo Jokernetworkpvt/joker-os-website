@@ -1,1287 +1,1059 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Joker Network | My Account</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07050c;
+    color: #fff;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 74px;
+    padding: 16px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(7,5,12,.92);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+
+    backdrop-filter: blur(18px);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 950;
+    letter-spacing: 1px;
+}
+
+.logo-network {
+    background: linear-gradient(90deg,#a75cff,#ff38b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #aaa3b2;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: #d276ff;
+}
+
+.page {
+    max-width: 1250px;
+    margin: auto;
+    padding: 60px 7% 100px;
+}
+
+.eyebrow {
+    color: #b566ed;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: clamp(38px,6vw,62px);
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    margin-top: 14px;
+    color: #99919f;
+    line-height: 1.7;
+}
+
+.account-grid {
+    margin-top: 40px;
+
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 25px;
+}
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Joker Network user account dashboard.">
-
-    <title>My Account | Joker Network</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #ffffff;
-            background:
-                radial-gradient(
-                    circle at top,
-                    #242424 0%,
-                    #111111 45%,
-                    #070707 100%
-                );
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            min-height: 70px;
-            padding: 0 30px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-
-            background: rgba(10, 10, 10, 0.94);
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.10);
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: 900;
-            white-space: nowrap;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
+.card {
+    padding: 26px;
 
-        nav a {
-            color: #cccccc;
-            font-size: 14px;
-            font-weight: 700;
-        }
+    border-radius: 20px;
 
-        nav a:hover {
-            color: #ffffff;
-        }
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,19,45,.95),
+            rgba(11,8,17,.98)
+        );
 
-        /* =========================
-           MAIN
-        ========================= */
+    border: 1px solid rgba(190,100,255,.15);
+}
 
-        .account-page {
-            width: min(1100px, 100%);
-            margin: 0 auto;
-            padding: 55px 20px 80px;
-        }
+.profile-card {
+    height: fit-content;
+}
 
-        /* =========================
-           HERO
-        ========================= */
+.avatar {
+    width: 85px;
+    height: 85px;
 
-        .account-hero {
-            padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    margin-bottom: 20px;
 
-            gap: 25px;
-            flex-wrap: wrap;
+    border-radius: 50%;
 
-            border-radius: 24px;
+    font-size: 38px;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #202020,
-                    #121212
-                );
+    background:
+        linear-gradient(
+            135deg,
+            #762cff,
+            #d72cff
+        );
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,0.12);
+.profile-name {
+    font-size: 23px;
+    font-weight: 950;
+}
 
-            box-shadow:
-                0 20px 60px
-                rgba(0,0,0,0.45);
-        }
+.profile-email {
+    margin-top: 7px;
 
-        .profile-area {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+    color: #88818d;
+    font-size: 12px;
+    word-break: break-word;
+}
 
-        .avatar {
-            width: 82px;
-            height: 82px;
+.profile-info {
+    margin-top: 25px;
+}
 
-            flex-shrink: 0;
+.info-row {
+    padding: 13px 0;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
 
-            border-radius: 50%;
+    border-bottom: 1px solid rgba(255,255,255,.06);
 
-            font-size: 40px;
+    color: #99919f;
+    font-size: 11px;
+}
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #333333,
-                    #151515
-                );
+.info-row strong {
+    color: #ddd6e1;
+    text-align: right;
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,0.15);
-        }
+.orders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 
-        .account-label {
-            color: #ff3b3b;
+    margin-bottom: 22px;
+}
 
-            font-size: 12px;
+.orders-header h2 {
+    font-size: 21px;
+}
 
-            font-weight: 900;
+.order-count {
+    padding: 7px 12px;
 
-            letter-spacing: 2px;
-        }
+    border-radius: 20px;
 
-        #displayName {
-            margin: 6px 0;
+    color: #c778ff;
+    background: rgba(190,100,255,.08);
 
-            font-size: 32px;
+    border: 1px solid rgba(190,100,255,.15);
 
-            color: #ffffff;
-        }
+    font-size: 11px;
+    font-weight: 900;
+}
 
-        #userEmail {
-            margin: 0;
+.order-card {
+    margin-bottom: 17px;
+    padding: 20px;
 
-            color: #999999;
-        }
+    border-radius: 15px;
 
-        /* =========================
-           BUTTONS
-        ========================= */
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+}
 
-        .button {
-            display: inline-flex;
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
 
-            align-items: center;
-            justify-content: center;
+.order-id {
+    color: #c26cff;
+    font-size: 12px;
+    font-weight: 950;
+}
 
-            min-height: 44px;
+.order-date {
+    margin-top: 6px;
 
-            padding:
-                10px 18px;
+    color: #77717d;
+    font-size: 10px;
+}
 
-            border-radius: 10px;
+.status {
+    padding: 7px 10px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff3030,
-                    #b80000
-                );
+    border-radius: 20px;
 
-            color: white;
+    color: #8cffb9;
+    background: rgba(80,255,150,.07);
 
-            font-weight: 800;
+    border: 1px solid rgba(80,255,150,.12);
 
-            border: none;
+    font-size: 9px;
+    font-weight: 900;
+}
 
-            cursor: pointer;
+.product-name {
+    margin-top: 20px;
 
-            transition:
-                transform 0.2s ease,
-                opacity 0.2s ease;
-        }
+    font-size: 17px;
+    font-weight: 950;
+}
 
-        .button:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
+.configuration {
+    margin-top: 12px;
 
-        .secondary {
-            background:
-                #242424;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,0.14);
-        }
+.configuration-item {
+    padding: 9px 0;
 
-        .logout-button {
-            min-width: 120px;
-        }
+    border-bottom: 1px solid rgba(255,255,255,.05);
 
-        .logout-button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
+    color: #88818d;
+    font-size: 10px;
+}
 
-        /* =========================
-           STATUS
-        ========================= */
+.configuration-item strong {
+    display: block;
 
-        .account-status {
-            margin-top: 22px;
+    margin-top: 4px;
 
-            padding: 16px 18px;
+    color: #ddd6e1;
+    font-size: 11px;
+}
 
-            border-radius: 14px;
+.order-bottom {
+    margin-top: 18px;
+    padding-top: 17px;
 
-            background:
-                rgba(50,180,100,0.10);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-            border:
-                1px solid
-                rgba(80,210,120,0.20);
+    border-top: 1px solid rgba(255,255,255,.07);
+}
 
-            color: #a8efbd;
+.order-price {
+    font-size: 19px;
+    font-weight: 950;
 
-            line-height: 1.5;
-        }
+    color: #c26cff;
+}
 
-        .account-status.warning {
-            background:
-                rgba(255,190,50,0.08);
+.empty {
+    padding: 55px 20px;
 
-            border-color:
-                rgba(255,190,50,0.18);
+    text-align: center;
+}
 
-            color:
-                #ffd36b;
-        }
+.empty-icon {
+    font-size: 55px;
+}
 
-        #accountMessage {
-            color: #ff7777;
-            text-align: center;
-            min-height: 25px;
-        }
+.empty h3 {
+    margin-top: 18px;
+    font-size: 20px;
+}
 
-        /* =========================
-           SECTION
-        ========================= */
+.empty p {
+    margin-top: 10px;
 
-        .section-title {
-            margin:
-                45px 0 20px;
+    color: #88818d;
+    line-height: 1.6;
+}
 
-            font-size: 24px;
-        }
+.shop-button {
+    display: inline-block;
 
-        /* =========================
-           FEATURE GRID
-        ========================= */
+    margin-top: 22px;
+    padding: 13px 20px;
 
-        .feature-grid {
-            display: grid;
+    border-radius: 9px;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    background: linear-gradient(
+        90deg,
+        #762cff,
+        #d72cff
+    );
 
-            gap: 18px;
-        }
+    font-size: 11px;
+    font-weight: 900;
+}
 
-        .feature-card {
-            min-height: 220px;
+.danger-button {
+    width: 100%;
 
-            padding: 25px;
+    margin-top: 22px;
+    padding: 13px;
 
-            border-radius: 18px;
+    border-radius: 9px;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #1e1e1e,
-                    #131313
-                );
+    background: rgba(255,60,90,.05);
 
-            border:
-                1px solid
-                rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,60,90,.16);
 
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease;
-        }
+    color: #ff8095;
 
-        .feature-card:hover {
-            transform: translateY(-4px);
+    cursor: pointer;
 
-            border-color:
-                rgba(255,255,255,0.20);
-        }
+    font-size: 10px;
+    font-weight: 900;
+}
 
-        .feature-icon {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
+.danger-button:hover {
+    background: rgba(255,60,90,.1);
+}
 
-        .feature-card h3 {
-            margin:
-                0 0 8px;
+footer {
+    padding: 35px 7%;
 
-            font-size: 19px;
-        }
+    background: #040308;
 
-        .feature-card p {
-            color: #999999;
+    border-top: 1px solid rgba(255,255,255,.06);
 
-            line-height: 1.5;
+    text-align: center;
 
-            font-size: 14px;
+    color: #66606d;
+    font-size: 10px;
+}
 
-            min-height: 65px;
-        }
+@media(max-width:850px) {
 
-        .coming-soon {
-            display: inline-block;
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
 
-            padding:
-                6px 11px;
+}
 
-            border-radius:
-                20px;
+@media(max-width:600px) {
 
-            color:
-                #ffd05c;
+    .nav-links {
+        display: none;
+    }
 
-            background:
-                rgba(255,190,50,0.09);
+    .page {
+        padding: 45px 5% 70px;
+    }
 
-            border:
-                1px solid
-                rgba(255,190,50,0.18);
+    .configuration {
+        grid-template-columns: 1fr;
+    }
 
-            font-size:
-                11px;
+    .order-top {
+        flex-direction: column;
+    }
 
-            font-weight:
-                900;
-        }
-
-        /* =========================
-           ACCOUNT INFORMATION
-        ========================= */
-
-        .account-info {
-            padding: 25px;
-
-            border-radius: 18px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #1d1d1d,
-                    #121212
-                );
-
-            border:
-                1px solid
-                rgba(255,255,255,0.09);
-        }
-
-        .info-row {
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 20px;
-
-            padding:
-                15px 0;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.07);
-        }
-
-        .info-row:last-child {
-            border-bottom: none;
-        }
-
-        .info-label {
-            color: #999999;
-        }
-
-        .info-value {
-            color: #ffffff;
-
-            text-align: right;
-
-            word-break: break-word;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding:
-                45px 20px;
-
-            text-align: center;
-
-            background:
-                #090909;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            color:
-                #888888;
-        }
-
-        footer h2 {
-            color: white;
-            margin-top: 0;
-        }
-
-        footer a {
-            color: #cccccc;
-        }
-
-        footer a:hover {
-            color: white;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 850px) {
-
-            header {
-                padding: 15px 20px;
-
-                align-items: flex-start;
-
-                flex-direction: column;
-            }
-
-            nav {
-                width: 100%;
-            }
-
-            .feature-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-        @media (max-width: 600px) {
-
-            .account-page {
-                padding:
-                    30px 15px 60px;
-            }
-
-            .account-hero {
-                padding: 25px;
-            }
-
-            .profile-area {
-                align-items: flex-start;
-            }
-
-            #displayName {
-                font-size: 25px;
-            }
-
-            .feature-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-            .logout-button {
-                width: 100%;
-            }
-
-            .info-row {
-                flex-direction: column;
-                gap: 6px;
-            }
-
-            .info-value {
-                text-align: left;
-            }
-
-        }
-
-    </style>
-
+}
+</style>
 </head>
-
 
 <body>
 
+<header class="navbar">
 
-<!-- =========================
-     HEADER
-========================= -->
+    <a href="index.html" class="logo">
+        JOKER
+        <span class="logo-network">NETWORK</span>
+    </a>
 
-<header>
+    <nav class="nav-links">
 
-    <div class="logo">
-        🃏 Joker Network
-    </div>
+        <a href="index.html">Home</a>
 
-    <nav>
+        <a href="shop.html">Shop</a>
 
-        <a href="index.html">
-            Home
-        </a>
+        <a href="joker-os.html">Joker OS</a>
 
-        <a href="games.html">
-            Games
-        </a>
+        <a href="games.html">Games</a>
 
-        <a href="shop.html">
-            🖥️ Joker PC
-        </a>
-
-        <a href="donate.html">
-            ❤️ Donate
-        </a>
+        <a href="cart.html">Cart</a>
 
     </nav>
 
 </header>
 
 
-<!-- =========================
-     MAIN
-========================= -->
+<main class="page">
 
-<main>
+    <div class="eyebrow">
+        JOKER NETWORK
+    </div>
 
-<section class="account-page">
+    <h1>
+        My Account
+    </h1>
+
+    <p class="subtitle">
+        Manage your profile and view your Joker Network orders.
+    </p>
 
 
-    <!-- PROFILE -->
+    <section class="account-grid">
 
-    <div class="account-hero">
 
-        <div class="profile-area">
+        <!-- PROFILE -->
+
+        <aside class="card profile-card">
 
             <div class="avatar">
                 🃏
             </div>
 
-            <div>
+            <div
+                id="profileName"
+                class="profile-name"
+            >
+                Joker Customer
+            </div>
 
-                <div class="account-label">
-                    JOKER NETWORK ACCOUNT
+            <div
+                id="profileEmail"
+                class="profile-email"
+            >
+                No email saved
+            </div>
+
+
+            <div class="profile-info">
+
+                <div class="info-row">
+
+                    <span>
+                        Orders
+                    </span>
+
+                    <strong id="profileOrders">
+                        0
+                    </strong>
+
                 </div>
 
-                <h1 id="displayName">
-                    Loading...
-                </h1>
+                <div class="info-row">
 
-                <p id="userEmail">
-                    Checking account...
-                </p>
+                    <span>
+                        Account
+                    </span>
+
+                    <strong>
+                        Customer
+                    </strong>
+
+                </div>
 
             </div>
 
-        </div>
 
-
-        <button
-            id="logoutButton"
-            class="button logout-button"
-            type="button"
-        >
-            🚪 Logout
-        </button>
-
-    </div>
-
-
-    <!-- STATUS -->
-
-    <div
-        id="accountStatus"
-        class="account-status"
-    >
-        🔄 Checking your Joker account...
-    </div>
-
-
-    <p
-        id="accountMessage"
-        role="status"
-        aria-live="polite">
-    </p>
-
-
-    <!-- FEATURES -->
-
-    <h2 class="section-title">
-        🚀 Joker Network
-    </h2>
-
-
-    <div class="feature-grid">
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                💻
-            </div>
-
-            <h3>
-                Joker OS
-            </h3>
-
-            <p>
-                Explore the latest Joker OS
-                release and future updates.
-            </p>
-
-            <a
-                href="index.html"
-                class="button secondary"
+            <button
+                id="clearOrders"
+                class="danger-button"
             >
-                Explore
-            </a>
+                Clear Local Order History
+            </button>
 
-        </div>
+        </aside>
 
 
-        <div class="feature-card">
+        <!-- ORDERS -->
 
-            <div class="feature-icon">
-                🎮
+        <section class="card">
+
+            <div class="orders-header">
+
+                <h2>
+                    📦 My Orders
+                </h2>
+
+                <span
+                    id="orderCount"
+                    class="order-count"
+                >
+                    0 Orders
+                </span>
+
             </div>
 
-            <h3>
-                Joker Games
-            </h3>
 
-            <p>
-                Discover the Joker Games
-                low-end PC gaming collection.
-            </p>
+            <div id="ordersContainer">
 
-            <a
-                href="games.html"
-                class="button secondary"
-            >
-                Open Games
-            </a>
+                <!-- Orders inserted by JavaScript -->
 
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                🖥️
             </div>
 
-            <h3>
-                Joker PC
-            </h3>
+        </section>
 
-            <p>
-                Browse Gaming PC, Budget PC,
-                Office PC and Custom PC.
-            </p>
-
-            <a
-                href="shop.html"
-                class="button secondary"
-            >
-                Open Store
-            </a>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                📸
-            </div>
-
-            <h3>
-                Screenshot Sharing
-            </h3>
-
-            <p>
-                Share your Joker OS screenshots
-                with the future Joker community.
-            </p>
-
-            <span class="coming-soon">
-                COMING SOON
-            </span>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                👥
-            </div>
-
-            <h3>
-                Joker Community
-            </h3>
-
-            <p>
-                Community profiles, posts and
-                interactions are planned.
-            </p>
-
-            <span class="coming-soon">
-                COMING SOON
-            </span>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Support Joker
-            </h3>
-
-            <p>
-                Support development of Joker OS
-                and Joker Network.
-            </p>
-
-            <a
-                href="donate.html"
-                class="button secondary"
-            >
-                Donate
-            </a>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- ACCOUNT INFORMATION -->
-
-    <h2 class="section-title">
-        👤 Account Information
-    </h2>
-
-
-    <div class="account-info">
-
-
-        <div class="info-row">
-
-            <span class="info-label">
-                Display Name
-            </span>
-
-            <strong
-                id="infoName"
-                class="info-value">
-                —
-            </strong>
-
-        </div>
-
-
-        <div class="info-row">
-
-            <span class="info-label">
-                Email
-            </span>
-
-            <strong
-                id="infoEmail"
-                class="info-value">
-                —
-            </strong>
-
-        </div>
-
-
-        <div class="info-row">
-
-            <span class="info-label">
-                Account ID
-            </span>
-
-            <strong
-                id="infoId"
-                class="info-value">
-                —
-            </strong>
-
-        </div>
-
-
-        <div class="info-row">
-
-            <span class="info-label">
-                Email Verification
-            </span>
-
-            <strong
-                id="infoVerified"
-                class="info-value">
-                Checking...
-            </strong>
-
-        </div>
-
-
-        <div class="info-row">
-
-            <span class="info-label">
-                Account Created
-            </span>
-
-            <strong
-                id="infoCreated"
-                class="info-value">
-                —
-            </strong>
-
-        </div>
-
-
-    </div>
-
-
-</section>
+    </section>
 
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-    <h2>
-        🃏 Joker Network
-    </h2>
-
-    <p>
-        Joker OS • Joker Games • Joker PC
-    </p>
-
-    <br>
-
-    <p>
-
-        <a href="index.html">
-            Home
-        </a>
-
-        ·
-
-        <a href="games.html">
-            Games
-        </a>
-
-        ·
-
-        <a href="shop.html">
-            Joker PC
-        </a>
-
-        ·
-
-        <a href="donate.html">
-            Donate
-        </a>
-
-    </p>
-
-    <br>
-
-    <p>
-        © 2026 Jokernetworkpvt.
-        All Rights Reserved.
-    </p>
+    © 2026 Joker Network. All rights reserved.
 
 </footer>
 
 
-<!-- =========================
-     SUPABASE
-========================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="supabase.js"></script>
-
-
 <script>
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
+/* =========================================
+   LOAD ORDERS
+========================================= */
 
-const displayName =
-    document.getElementById("displayName");
+function getOrders() {
 
-const userEmail =
-    document.getElementById("userEmail");
+    try {
 
-const accountStatus =
-    document.getElementById("accountStatus");
+        return JSON.parse(
+            localStorage.getItem(
+                "jokerOrders"
+            ) || "[]"
+        );
 
-const accountMessage =
-    document.getElementById("accountMessage");
+    } catch(error) {
 
-const logoutButton =
-    document.getElementById("logoutButton");
+        return [];
 
-
-/* =========================================================
-   CHECK SUPABASE
-========================================================= */
-
-if (
-    typeof jokerSupabase === "undefined"
-) {
-
-    accountStatus.classList.add("warning");
-
-    accountStatus.innerHTML =
-        "❌ Supabase is not loaded. " +
-        "Check that supabase.js is in your repository.";
-
-    logoutButton.disabled = true;
+    }
 
 }
 
 
-/* =========================================================
-   LOAD ACCOUNT
-========================================================= */
+/* =========================================
+   FORMAT PRICE
+========================================= */
 
-async function loadAccount() {
+function formatPrice(price) {
 
-    if (
-        typeof jokerSupabase === "undefined"
-    ) {
+    return "₹" +
+        Number(price || 0)
+            .toLocaleString("en-IN");
+
+}
+
+
+/* =========================================
+   FORMAT DATE
+========================================= */
+
+function formatDate(date) {
+
+    const d =
+        new Date(date);
+
+    if (isNaN(d.getTime())) {
+        return "Date unavailable";
+    }
+
+    return d.toLocaleDateString(
+        "en-IN",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================
+   DISPLAY ORDERS
+========================================= */
+
+function displayOrders() {
+
+    const orders =
+        getOrders();
+
+    const container =
+        document.getElementById(
+            "ordersContainer"
+        );
+
+    const count =
+        document.getElementById(
+            "orderCount"
+        );
+
+    const profileOrders =
+        document.getElementById(
+            "profileOrders"
+        );
+
+
+    count.textContent =
+        orders.length +
+        (
+            orders.length === 1
+                ? " Order"
+                : " Orders"
+        );
+
+
+    profileOrders.textContent =
+        orders.length;
+
+
+    if (!orders.length) {
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    No orders yet
+                </h3>
+
+                <p>
+                    Your Joker Network orders
+                    will appear here after checkout.
+                </p>
+
+                <a
+                    href="shop.html"
+                    class="shop-button"
+                >
+                    Browse Joker Tech
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /*
+       Newest order first
+    */
+
+    const newestFirst =
+        [...orders].reverse();
+
+
+    container.innerHTML =
+        newestFirst
+            .map(
+                (order) => {
+
+                    const product =
+                        order.product || {};
+
+                    const customer =
+                        order.customer || {};
+
+
+                    return `
+
+                        <article
+                            class="order-card"
+                        >
+
+                            <div
+                                class="order-top"
+                            >
+
+                                <div>
+
+                                    <div
+                                        class="order-id"
+                                    >
+                                        ${escapeHTML(
+                                            order.orderId ||
+                                            "Unknown Order"
+                                        )}
+                                    </div>
+
+                                    <div
+                                        class="order-date"
+                                    >
+                                        ${formatDate(
+                                            order.createdAt
+                                        )}
+                                    </div>
+
+                                </div>
+
+
+                                <span
+                                    class="status"
+                                >
+                                    ${escapeHTML(
+                                        order.status ||
+                                        "Order Received"
+                                    )}
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                class="product-name"
+                            >
+                                ${escapeHTML(
+                                    product.product ||
+                                    "Joker Tech PC"
+                                )}
+                            </div>
+
+
+                            <div
+                                class="configuration"
+                            >
+
+                                <div
+                                    class="configuration-item"
+                                >
+
+                                    Processor
+
+                                    <strong>
+                                        ${escapeHTML(
+                                            product.processor ||
+                                            "Not specified"
+                                        )}
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="configuration-item"
+                                >
+
+                                    RAM
+
+                                    <strong>
+                                        ${escapeHTML(
+                                            product.ram ||
+                                            "Not specified"
+                                        )}
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="configuration-item"
+                                >
+
+                                    Storage
+
+                                    <strong>
+                                        ${escapeHTML(
+                                            product.storage ||
+                                            "Not specified"
+                                        )}
+                                    </strong>
+
+                                </div>
+
+
+                                <div
+                                    class="configuration-item"
+                                >
+
+                                    Graphics
+
+                                    <strong>
+                                        ${escapeHTML(
+                                            product.graphics ||
+                                            "Integrated Graphics"
+                                        )}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="order-bottom"
+                            >
+
+                                <div>
+
+                                    <div
+                                        style="
+                                        color:#77717d;
+                                        font-size:9px;
+                                        margin-bottom:5px;
+                                        "
+                                    >
+                                        ORDER TOTAL
+                                    </div>
+
+                                    <div
+                                        class="order-price"
+                                    >
+                                        ${formatPrice(
+                                            product.price
+                                        )}
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    style="
+                                    text-align:right;
+                                    color:#77717d;
+                                    font-size:9px;
+                                    line-height:1.6;
+                                    "
+                                >
+
+                                    ${escapeHTML(
+                                        customer.name ||
+                                        "Customer"
+                                    )}
+
+                                    <br>
+
+                                    ${escapeHTML(
+                                        customer.state ||
+                                        ""
+                                    )}
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    `;
+
+                }
+            )
+            .join("");
+
+}
+
+
+/* =========================================
+   PROFILE INFORMATION
+========================================= */
+
+function loadProfile() {
+
+    const orders =
+        getOrders();
+
+
+    if (!orders.length) {
         return;
     }
 
 
-    try {
+    /*
+       Use latest customer's information
+    */
 
-        const {
-            data,
-            error
-        } =
-            await jokerSupabase.auth.getUser();
-
-
-        if (error) {
-
-            console.error(
-                "Get user error:",
-                error
-            );
-
-            accountStatus.classList.add(
-                "warning"
-            );
-
-            accountStatus.innerHTML =
-                "⚠️ Unable to verify your login session.";
-
-            accountMessage.textContent =
-                "Please log in again.";
-
-            setTimeout(
-                function() {
-
-                    window.location.href =
-                        "login.html";
-
-                },
-                1500
-            );
-
-            return;
-
-        }
+    const latest =
+        orders[orders.length - 1];
 
 
-        const user =
-            data.user;
+    const customer =
+        latest.customer || {};
 
 
-        if (!user) {
-
-            window.location.href =
-                "login.html";
-
-            return;
-
-        }
-
-
-        /* =====================
-           DISPLAY NAME
-        ====================== */
-
-        const name =
-            user.user_metadata &&
-            user.user_metadata.display_name
-                ? user.user_metadata.display_name
-                : (
-                    user.email
-                        ? user.email.split("@")[0]
-                        : "Joker User"
-                );
-
-
-        displayName.textContent =
-            name;
-
-
-        userEmail.textContent =
-            user.email || "";
-
+    if (customer.name) {
 
         document
-            .getElementById("infoName")
+            .getElementById(
+                "profileName"
+            )
             .textContent =
-            name;
-
-
-        document
-            .getElementById("infoEmail")
-            .textContent =
-            user.email || "—";
-
-
-        document
-            .getElementById("infoId")
-            .textContent =
-            user.id;
-
-
-        /* =====================
-           VERIFICATION
-        ====================== */
-
-        const verified =
-            Boolean(
-                user.email_confirmed_at
-            );
-
-
-        document
-            .getElementById("infoVerified")
-            .textContent =
-            verified
-                ? "✅ Verified"
-                : "⚠️ Not verified";
-
-
-        /* =====================
-           CREATED DATE
-        ====================== */
-
-        if (user.created_at) {
-
-            document
-                .getElementById("infoCreated")
-                .textContent =
-                new Date(
-                    user.created_at
-                ).toLocaleDateString();
-
-        }
-
-
-        /* =====================
-           STATUS
-        ====================== */
-
-        if (verified) {
-
-            accountStatus.innerHTML =
-                "🟢 <strong>Account Active</strong> — " +
-                "Your Joker Network account is ready.";
-
-        }
-
-        else {
-
-            accountStatus.classList.add(
-                "warning"
-            );
-
-            accountStatus.innerHTML =
-                "🟡 <strong>Email Verification Pending</strong> — " +
-                "Please verify your email address.";
-
-        }
+            customer.name;
 
     }
 
-    catch (error) {
 
-        console.error(
-            "Account loading error:",
-            error
-        );
+    if (customer.email) {
 
-        accountStatus.classList.add(
-            "warning"
-        );
+        document
+            .getElementById(
+                "profileEmail"
+            )
+            .textContent =
+            customer.email;
 
-        accountStatus.innerHTML =
-            "❌ Unable to load your Joker account.";
+    } else {
+
+        document
+            .getElementById(
+                "profileEmail"
+            )
+            .textContent =
+            "No email saved";
 
     }
 
 }
 
 
-/* =========================================================
-   LOGOUT
-========================================================= */
+/* =========================================
+   CLEAR ORDERS
+========================================= */
 
-logoutButton.addEventListener(
-    "click",
-    async function() {
+document
+    .getElementById(
+        "clearOrders"
+    )
+    .addEventListener(
+        "click",
+        function() {
 
-        if (
-            typeof jokerSupabase === "undefined"
-        ) {
-            return;
-        }
-
-
-        logoutButton.disabled =
-            true;
-
-        logoutButton.textContent =
-            "⏳ Logging out...";
+            const orders =
+                getOrders();
 
 
-        accountMessage.textContent =
-            "";
+            if (!orders.length) {
 
-
-        try {
-
-            const {
-                error
-            } =
-                await jokerSupabase.auth.signOut();
-
-
-            if (error) {
-
-                console.error(
-                    "Logout error:",
-                    error
+                alert(
+                    "There are no orders to clear."
                 );
-
-                accountMessage.textContent =
-                    "❌ " +
-                    error.message;
-
-                logoutButton.disabled =
-                    false;
-
-                logoutButton.textContent =
-                    "🚪 Logout";
 
                 return;
 
             }
 
 
-            window.location.replace(
-                "login.html"
+            const confirmed =
+                confirm(
+                    "Are you sure you want to clear your local order history?"
+                );
+
+
+            if (!confirmed) {
+                return;
+            }
+
+
+            localStorage.removeItem(
+                "jokerOrders"
             );
 
-        }
 
-        catch (error) {
-
-            console.error(
-                "Unexpected logout error:",
-                error
+            localStorage.removeItem(
+                "jokerLastOrder"
             );
 
-            accountMessage.textContent =
-                "❌ Logout failed. Please try again.";
 
-            logoutButton.disabled =
-                false;
+            displayOrders();
 
-            logoutButton.textContent =
-                "🚪 Logout";
+
+            document
+                .getElementById(
+                    "profileName"
+                )
+                .textContent =
+                "Joker Customer";
+
+
+            document
+                .getElementById(
+                    "profileEmail"
+                )
+                .textContent =
+                "No email saved";
 
         }
-
-    }
-);
+    );
 
 
-/* =========================================================
+/* =========================================
    START
-========================================================= */
+========================================= */
 
-loadAccount();
+displayOrders();
+
+loadProfile();
 
 </script>
 
-
 </body>
-
 </html>
-```
