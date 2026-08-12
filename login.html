@@ -1,0 +1,801 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Joker Network account login">
+
+    <title>Login | Joker Network</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #ffffff;
+
+            background: #070707;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            min-height: 72px;
+
+            padding: 0 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            background:
+                rgba(5,5,5,0.96);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.09);
+
+        }
+
+
+        .logo {
+
+            font-size: 21px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        nav a {
+
+            color: #bbbbbb;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        nav a:hover {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+
+            flex: 1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 70px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 15%,
+                    #292929 0%,
+                    #111111 38%,
+                    #070707 75%
+                );
+
+        }
+
+
+        .login-card {
+
+            width: 100%;
+
+            max-width: 500px;
+
+            padding: 38px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1d1d1d,
+                    #101010
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.09);
+
+            box-shadow:
+                0 25px 80px
+                rgba(0,0,0,0.35);
+
+            text-align: center;
+
+        }
+
+
+        .icon {
+
+            font-size: 65px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .tag {
+
+            color: #ff3030;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        h1 {
+
+            margin:
+                12px 0 10px;
+
+            font-size:
+                34px;
+
+        }
+
+
+        .intro {
+
+            margin:
+                0 auto 28px;
+
+            color:
+                #888888;
+
+            line-height:
+                1.7;
+
+            font-size:
+                14px;
+
+        }
+
+
+        /* =========================
+           STATUS
+        ========================= */
+
+        .status {
+
+            padding:
+                18px;
+
+            border-radius:
+                14px;
+
+            background:
+                rgba(255,170,0,0.08);
+
+            border:
+                1px solid
+                rgba(255,170,0,0.18);
+
+            color:
+                #c5a15a;
+
+            line-height:
+                1.6;
+
+            font-size:
+                13px;
+
+            text-align:
+                left;
+
+        }
+
+
+        .status strong {
+
+            display:
+                block;
+
+            margin-bottom:
+                6px;
+
+            color:
+                #ffbd4a;
+
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+
+            display:
+                flex;
+
+            gap:
+                12px;
+
+            margin-top:
+                25px;
+
+        }
+
+
+        .button {
+
+            flex:
+                1;
+
+            padding:
+                14px 18px;
+
+            border-radius:
+                10px;
+
+            font-weight:
+                900;
+
+            text-align:
+                center;
+
+        }
+
+
+        .primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3030,
+                    #a90000
+                );
+
+        }
+
+
+        .secondary {
+
+            background:
+                #252525;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+        }
+
+
+        .button:hover {
+
+            opacity:
+                0.88;
+
+        }
+
+
+        /* =========================
+           FUTURE FEATURES
+        ========================= */
+
+        .future {
+
+            margin-top:
+                28px;
+
+            padding-top:
+                25px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            text-align:
+                left;
+
+        }
+
+
+        .future h2 {
+
+            margin:
+                0 0 14px;
+
+            font-size:
+                17px;
+
+        }
+
+
+        .future-item {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            padding:
+                9px 0;
+
+            color:
+                #888888;
+
+            font-size:
+                13px;
+
+        }
+
+
+        .future-item span {
+
+            color:
+                #ffffff;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding:
+                40px 20px;
+
+            text-align:
+                center;
+
+            background:
+                #050505;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color:
+                #777777;
+
+            font-size:
+                13px;
+
+        }
+
+
+        footer h2 {
+
+            color:
+                #ffffff;
+
+        }
+
+
+        footer a {
+
+            color:
+                #bbbbbb;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            header {
+
+                padding:
+                    15px 20px;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            nav {
+
+                gap:
+                    11px;
+
+            }
+
+
+            main {
+
+                padding:
+                    45px 15px;
+
+            }
+
+
+            .login-card {
+
+                padding:
+                    28px 20px;
+
+            }
+
+
+            .buttons {
+
+                flex-direction:
+                    column;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+
+    <div class="logo">
+
+        🃏 Joker Network
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="games.html">
+            Games
+        </a>
+
+        <a href="shop.html">
+            🖥️ Joker PC
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+        <a href="donate.html">
+            ❤️ Donate
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================
+     LOGIN
+========================= -->
+
+<main>
+
+
+    <div class="login-card">
+
+
+        <div class="icon">
+
+            🃏
+
+        </div>
+
+
+        <div class="tag">
+
+            JOKER NETWORK
+
+        </div>
+
+
+        <h1>
+
+            Login
+
+        </h1>
+
+
+        <p class="intro">
+
+            Joker Network accounts are being
+            prepared for a future release.
+
+        </p>
+
+
+
+        <div class="status">
+
+
+            <strong>
+
+                🚧 Login System Coming Soon
+
+            </strong>
+
+
+            The current Joker Network website
+            is hosted on GitHub Pages and does
+            not have a real authentication
+            backend.
+
+            <br><br>
+
+            No password or personal login
+            information is requested on this
+            page.
+
+        </div>
+
+
+
+        <div class="buttons">
+
+
+            <a
+                href="index.html"
+                class="button primary"
+            >
+
+                🏠 Back Home
+
+            </a>
+
+
+            <a
+                href="register.html"
+                class="button secondary"
+            >
+
+                📝 Register
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="future">
+
+
+            <h2>
+
+                Future Account Features
+
+            </h2>
+
+
+            <div class="future-item">
+
+                🔐
+
+                <span>
+                    Secure account authentication
+                </span>
+
+            </div>
+
+
+            <div class="future-item">
+
+                👤
+
+                <span>
+                    Joker Network profiles
+                </span>
+
+            </div>
+
+
+            <div class="future-item">
+
+                🎮
+
+                <span>
+                    Joker Games account features
+                </span>
+
+            </div>
+
+
+            <div class="future-item">
+
+                💻
+
+                <span>
+                    Joker OS account integration
+                </span>
+
+            </div>
+
+
+            <div class="future-item">
+
+                🛒
+
+                <span>
+                    Joker PC account features
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+    <h2>
+
+        🃏 Joker Network
+
+    </h2>
+
+
+    <p>
+
+        Joker OS • Joker Games • Joker PC
+
+    </p>
+
+
+    <p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        ·
+
+        <a href="games.html">
+            Games
+        </a>
+
+        ·
+
+        <a href="shop.html">
+            Joker PC
+        </a>
+
+        ·
+
+        <a href="login.html">
+            Login
+        </a>
+
+        ·
+
+        <a href="donate.html">
+            Donate
+        </a>
+
+    </p>
+
+
+    <p>
+
+        © 2026 Jokernetworkpvt.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>
+```

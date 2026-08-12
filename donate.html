@@ -1,0 +1,1198 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Support Joker Network development">
+
+    <title>Support Joker Network</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #ffffff;
+
+            background: #070707;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            min-height: 72px;
+
+            padding: 0 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            background:
+                rgba(5,5,5,0.96);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.09);
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        .logo {
+
+            font-size: 21px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        nav a {
+
+            color: #bbbbbb;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        nav a:hover {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 570px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    #303030 0%,
+                    #111111 38%,
+                    #070707 75%
+                );
+
+        }
+
+
+        .hero-content {
+
+            max-width: 800px;
+
+        }
+
+
+        .heart {
+
+            font-size: 85px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .tag {
+
+            color: #ff3030;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            letter-spacing: 4px;
+
+        }
+
+
+        h1 {
+
+            margin: 12px 0;
+
+            font-size:
+                clamp(40px, 7vw, 68px);
+
+            line-height: 1;
+
+        }
+
+
+        h1 span {
+
+            color: #ff3030;
+
+        }
+
+
+        .hero p {
+
+            max-width: 680px;
+
+            margin: auto;
+
+            color: #999999;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 25px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3030,
+                    #a90000
+                );
+
+            font-weight: 900;
+
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+
+            padding: 75px 20px;
+
+        }
+
+
+        .container {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .section-title h2 {
+
+            margin: 0 0 10px;
+
+            font-size: 34px;
+
+        }
+
+
+        .section-title p {
+
+            margin: 0;
+
+            color: #888888;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================
+           SUPPORT CARDS
+        ========================= */
+
+        .cards {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                20px;
+
+        }
+
+
+        .card {
+
+            padding:
+                28px 20px;
+
+            text-align:
+                center;
+
+            border-radius:
+                18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1d1d1d,
+                    #101010
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+        }
+
+
+        .card-icon {
+
+            font-size:
+                42px;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .card h3 {
+
+            margin:
+                0 0 10px;
+
+            font-size:
+                19px;
+
+        }
+
+
+        .card p {
+
+            margin:
+                0;
+
+            color:
+                #888888;
+
+            line-height:
+                1.6;
+
+            font-size:
+                14px;
+
+        }
+
+
+        /* =========================
+           DONATION BOX
+        ========================= */
+
+        .donation-box {
+
+            margin-top:
+                45px;
+
+            padding:
+                40px 25px;
+
+            text-align:
+                center;
+
+            border-radius:
+                22px;
+
+            background:
+                #151515;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.09);
+
+        }
+
+
+        .donation-icon {
+
+            font-size:
+                60px;
+
+        }
+
+
+        .donation-box h2 {
+
+            margin:
+                12px 0;
+
+        }
+
+
+        .donation-box p {
+
+            max-width:
+                650px;
+
+            margin:
+                auto;
+
+            color:
+                #888888;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .coming-soon {
+
+            display:
+                inline-block;
+
+            margin-top:
+                25px;
+
+            padding:
+                10px 15px;
+
+            border-radius:
+                20px;
+
+            background:
+                rgba(255,170,0,0.10);
+
+            color:
+                #ffbb55;
+
+            font-size:
+                12px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        /* =========================
+           FUTURE PAYMENT
+        ========================= */
+
+        .payment-options {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                15px;
+
+            margin-top:
+                30px;
+
+        }
+
+
+        .payment {
+
+            padding:
+                22px;
+
+            text-align:
+                center;
+
+            border-radius:
+                15px;
+
+            background:
+                #111111;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+        }
+
+
+        .payment-icon {
+
+            font-size:
+                35px;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .payment strong {
+
+            display:
+                block;
+
+            margin-bottom:
+                5px;
+
+        }
+
+
+        .payment span {
+
+            color:
+                #666666;
+
+            font-size:
+                12px;
+
+        }
+
+
+        /* =========================
+           NOTICE
+        ========================= */
+
+        .notice {
+
+            margin-top:
+                30px;
+
+            padding:
+                20px;
+
+            border-radius:
+                15px;
+
+            background:
+                #151515;
+
+            color:
+                #888888;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            text-align:
+                center;
+
+            line-height:
+                1.6;
+
+            font-size:
+                13px;
+
+        }
+
+
+        .notice strong {
+
+            color:
+                #ff6666;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding:
+                50px 20px;
+
+            text-align:
+                center;
+
+            background:
+                #050505;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color:
+                #777777;
+
+        }
+
+
+        footer h2 {
+
+            color:
+                #ffffff;
+
+        }
+
+
+        footer a {
+
+            color:
+                #bbbbbb;
+
+        }
+
+
+        footer a:hover {
+
+            color:
+                #ffffff;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+
+                padding:
+                    15px 20px;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            nav {
+
+                gap:
+                    11px;
+
+            }
+
+
+            .cards {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .payment-options {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            section {
+
+                padding:
+                    60px 15px;
+
+            }
+
+
+            .hero {
+
+                min-height:
+                    520px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+
+    <div class="logo">
+
+        🃏 Joker Network
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="games.html">
+            Games
+        </a>
+
+        <a href="shop.html">
+            🖥️ Joker PC
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+        <a href="donate.html">
+            ❤️ Donate
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <div class="heart">
+
+            ❤️
+
+        </div>
+
+
+        <div class="tag">
+
+            SUPPORT JOKER NETWORK
+
+        </div>
+
+
+        <h1>
+
+            SUPPORT
+            <span>
+                JOKER
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Your support can help Joker Network
+            continue developing Joker OS,
+            Joker Games and Joker PC.
+
+            Donation features will be added
+            when the project is ready.
+
+        </p>
+
+
+        <a
+            href="#support"
+            class="button"
+        >
+
+            ❤️ Learn More
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     WHY SUPPORT
+========================= -->
+
+<section
+    id="support"
+>
+
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+
+            <h2>
+
+                Where Your Support Goes
+
+            </h2>
+
+
+            <p>
+
+                Future support can help us
+                continue building the Joker
+                ecosystem.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+
+                <div class="card-icon">
+
+                    💻
+
+                </div>
+
+
+                <h3>
+
+                    Joker OS
+
+                </h3>
+
+
+                <p>
+
+                    Development, testing,
+                    optimization and future
+                    Joker OS releases.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="card">
+
+
+                <div class="card-icon">
+
+                    🎮
+
+                </div>
+
+
+                <h3>
+
+                    Joker Games
+
+                </h3>
+
+
+                <p>
+
+                    Future games, gaming tools
+                    and low-end PC gaming
+                    projects.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="card">
+
+
+                <div class="card-icon">
+
+                    🖥️
+
+                </div>
+
+
+                <h3>
+
+                    Joker PC
+
+                </h3>
+
+
+                <p>
+
+                    PC builds, accessories
+                    and affordable computer
+                    solutions.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================
+             DONATION
+        ====================== -->
+
+        <div class="donation-box">
+
+
+            <div class="donation-icon">
+
+                ❤️
+
+            </div>
+
+
+            <h2>
+
+                Donations Coming Soon
+
+            </h2>
+
+
+            <p>
+
+                Joker Network does not currently
+                process donations directly through
+                this GitHub Pages website.
+
+                A verified payment or UPI option
+                can be added later.
+
+            </p>
+
+
+            <div class="coming-soon">
+
+                🚧 DONATION SYSTEM COMING SOON
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FUTURE PAYMENT METHODS
+========================= -->
+
+<section
+    style="background:#0b0b0b;"
+>
+
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+
+            <h2>
+
+                Future Support Options
+
+            </h2>
+
+
+            <p>
+
+                Payment methods can be connected
+                here in a future update.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="payment-options">
+
+
+            <div class="payment">
+
+
+                <div class="payment-icon">
+                    🇮🇳
+                </div>
+
+
+                <strong>
+                    UPI
+                </strong>
+
+
+                <span>
+                    Coming Soon
+                </span>
+
+
+            </div>
+
+
+
+            <div class="payment">
+
+
+                <div class="payment-icon">
+                    📱
+                </div>
+
+
+                <strong>
+                    Payment Link
+                </strong>
+
+
+                <span>
+                    Coming Soon
+                </span>
+
+
+            </div>
+
+
+
+            <div class="payment">
+
+
+                <div class="payment-icon">
+                    💳
+                </div>
+
+
+                <strong>
+                    Online Payment
+                </strong>
+
+
+                <span>
+                    Coming Soon
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="notice">
+
+
+            <strong>
+                🔒 Important
+            </strong>
+
+            <br>
+
+            Do not enter payment information
+            into this GitHub Pages website
+            until an official payment system
+            is connected.
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+    <h2>
+
+        🃏 Joker Network
+
+    </h2>
+
+
+    <p>
+
+        Joker OS • Joker Games • Joker PC
+
+    </p>
+
+
+    <p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        ·
+
+        <a href="games.html">
+            Games
+        </a>
+
+        ·
+
+        <a href="shop.html">
+            Joker PC
+        </a>
+
+        ·
+
+        <a href="login.html">
+            Login
+        </a>
+
+        ·
+
+        <a href="donate.html">
+            Donate
+        </a>
+
+    </p>
+
+
+    <p>
+
+        © 2026 Jokernetworkpvt.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Joker Network | Cart</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07050c;
+    color: #fff;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 74px;
+    padding: 16px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(7,5,12,.94);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+
+    backdrop-filter: blur(18px);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 950;
+    letter-spacing: 1px;
+}
+
+.logo-network {
+    background: linear-gradient(90deg,#a75cff,#ff38b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #aaa3b2;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: #d276ff;
+}
+
+.cart-link {
+    color: #fff !important;
+}
+
+.cart-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 19px;
+    height: 19px;
+
+    margin-left: 4px;
+    padding: 0 5px;
+
+    border-radius: 20px;
+
+    color: #fff;
+    background: linear-gradient(90deg,#762cff,#d72cff);
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.page {
+    max-width: 1250px;
+    margin: auto;
+    padding: 60px 7% 100px;
+}
+
+.eyebrow {
+    color: #b566ed;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: clamp(38px,6vw,62px);
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    margin-top: 14px;
+    color: #99919f;
+    line-height: 1.7;
+}
+
+.cart-grid {
+    margin-top: 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 25px;
+}
+
+.card {
+    padding: 26px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,19,45,.95),
+            rgba(11,8,17,.98)
+        );
+
+    border: 1px solid rgba(190,100,255,.15);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.card-title h2 {
+    font-size: 20px;
+}
+
+.item-count {
+    color: #9e95a4;
+    font-size: 11px;
+}
+
+.cart-item {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+.item-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-name {
+    font-size: 19px;
+    font-weight: 950;
+}
+
+.product-type {
+    margin-top: 6px;
+    color: #827b87;
+    font-size: 10px;
+}
+
+.remove-btn {
+    border: 0;
+    background: transparent;
+    color: #ff718a;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.configuration {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+}
+
+.configuration-item {
+    padding: 10px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.05);
+
+    color: #827b87;
+    font-size: 10px;
+}
+
+.configuration-item strong {
+    display: block;
+    margin-top: 5px;
+
+    color: #ddd6e1;
+    font-size: 11px;
+}
+
+.item-bottom {
+    margin-top: 20px;
+    padding-top: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgba(190,100,255,.2);
+    border-radius: 7px;
+
+    color: #fff;
+    background: #120c19;
+
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.quantity-btn:hover {
+    border-color: #b766ef;
+}
+
+.quantity {
+    min-width: 18px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.item-price {
+    color: #c26cff;
+    font-size: 21px;
+    font-weight: 950;
+}
+
+.summary-card {
+    height: fit-content;
+    position: sticky;
+    top: 95px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    color: #99919f;
+    font-size: 12px;
+}
+
+.summary-row strong {
+    color: #ddd6e1;
+}
+
+.total-row {
+    margin-top: 20px;
+    padding-top: 18px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    font-size: 20px;
+    font-weight: 950;
+}
+
+.total-price {
+    color: #c26cff;
+}
+
+.checkout-btn,
+.shop-btn {
+    display: block;
+    width: 100%;
+
+    margin-top: 22px;
+    padding: 15px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.checkout-btn {
+    border: 0;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #762cff,
+            #d72cff
+        );
+
+    cursor: pointer;
+}
+
+.checkout-btn:hover,
+.shop-btn:hover {
+    transform: translateY(-2px);
+}
+
+.shop-btn {
+    color: #c778ff;
+    background: rgba(190,100,255,.06);
+    border: 1px solid rgba(190,100,255,.15);
+}
+
+.notice {
+    margin-top: 18px;
+    padding: 14px;
+
+    border-radius: 10px;
+
+    color: #89818e;
+    background: rgba(100,50,160,.06);
+
+    border: 1px solid rgba(180,100,255,.1);
+
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.empty {
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 65px;
+}
+
+.empty h2 {
+    margin-top: 18px;
+    font-size: 24px;
+}
+
+.empty p {
+    margin-top: 10px;
+
+    color: #88818d;
+    line-height: 1.6;
+}
+
+.empty-btn {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 14px 22px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #762cff,
+            #d72cff
+        );
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+footer {
+    padding: 35px 7%;
+
+    background: #040308;
+
+    border-top: 1px solid rgba(255,255,255,.06);
+
+    text-align: center;
+
+    color: #66606d;
+    font-size: 10px;
+}
+
+@media(max-width:900px) {
+
+    .cart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        position: static;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .page {
+        padding: 45px 5% 70px;
+    }
+
+    .configuration {
+        grid-template-columns: 1fr;
+    }
+
+    .item-top {
+        flex-direction: column;
+    }
+
+    .item-bottom {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        JOKER
+        <span class="logo-network">NETWORK</span>
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="shop.html">Shop</a>
+
+        <a href="joker-os.html">Joker OS</a>
+
+        <a href="games.html">Games</a>
+
+        <a href="account.html">Account</a>
+
+        <a
+            href="cart.html"
+            class="cart-link"
+        >
+            Cart
+            <span
+                id="cartBadge"
+                class="cart-badge"
+            >
+                0
+            </span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="page">
+
+    <div class="eyebrow">
+        JOKER NETWORK SHOP
+    </div>
+
+    <h1>
+        Your Cart
+    </h1>
+
+    <p class="subtitle">
+        Review your Joker Tech configuration before continuing to checkout.
+    </p>
+
+
+    <!-- CART -->
+
+    <section
+        id="cartSection"
+        class="cart-grid"
+    >
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <h2>
+                    🛒 Cart Items
+                </h2>
+
+                <span
+                    id="itemCount"
+                    class="item-count"
+                >
+                    0 items
+                </span>
+
+            </div>
+
+
+            <div id="cartItems">
+                <!-- JavaScript -->
+            </div>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <aside
+            id="summaryCard"
+            class="card summary-card"
+        >
+
+            <div class="card-title">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Items
+                </span>
+
+                <strong id="summaryItems">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="subtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong>
+                    To be calculated
+                </strong>
+
+            </div>
+
+
+            <div class="total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <span
+                    id="total"
+                    class="total-price"
+                >
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <a
+                href="checkout.html"
+                id="checkoutButton"
+                class="checkout-btn"
+            >
+                Proceed to Checkout →
+            </a>
+
+
+            <a
+                href="shop.html"
+                class="shop-btn"
+            >
+                ← Continue Shopping
+            </a>
+
+
+            <div class="notice">
+
+                💾 Your configuration is stored locally in
+                this browser and will be transferred to
+                the checkout page.
+
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <!-- EMPTY CART -->
+
+    <section
+        id="emptySection"
+        class="card empty"
+        style="display:none;"
+    >
+
+        <div class="empty-icon">
+            🛒
+        </div>
+
+        <h2>
+            Your cart is empty
+        </h2>
+
+        <p>
+            Choose a Joker Tech PC from the shop
+            and configure it to get started.
+        </p>
+
+        <a
+            href="shop.html"
+            class="empty-btn"
+        >
+            Browse Joker Tech PCs
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 Joker Network. All rights reserved.
+
+</footer>
+
+
+<script>
+
+/* =========================================
+   STORAGE
+========================================= */
+
+const CART_KEY =
+    "jokerCartConfiguration";
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const cartSection =
+    document.getElementById(
+        "cartSection"
+    );
+
+const emptySection =
+    document.getElementById(
+        "emptySection"
+    );
+
+const cartItems =
+    document.getElementById(
+        "cartItems"
+    );
+
+const itemCount =
+    document.getElementById(
+        "itemCount"
+    );
+
+const cartBadge =
+    document.getElementById(
+        "cartBadge"
+    );
+
+const summaryItems =
+    document.getElementById(
+        "summaryItems"
+    );
+
+const subtotal =
+    document.getElementById(
+        "subtotal"
+    );
+
+const total =
+    document.getElementById(
+        "total"
+    );
+
+const checkoutButton =
+    document.getElementById(
+        "checkoutButton"
+    );
+
+
+/* =========================================
+   FORMAT PRICE
+========================================= */
+
+function formatPrice(price) {
+
+    return "₹" +
+        Number(price || 0)
+        .toLocaleString("en-IN");
+
+}
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================
+   LOAD CART
+========================================= */
+
+function loadCart() {
+
+    try {
+
+        const data =
+            localStorage.getItem(
+                CART_KEY
+            );
+
+        if (!data) {
+            return null;
+        }
+
+        return JSON.parse(data);
+
+    } catch(error) {
+
+        console.error(
+            "Cart loading error:",
+            error
+        );
+
+        return null;
+
+    }
+
+}
+
+
+/* =========================================
+   SAVE CART
+========================================= */
+
+function saveCart(configuration) {
+
+    localStorage.setItem(
+        CART_KEY,
+        JSON.stringify(
+            configuration
+        )
+    );
+
+}
+
+
+/* =========================================
+   DISPLAY CART
+========================================= */
+
+function renderCart() {
+
+    const config =
+        loadCart();
+
+
+    /* EMPTY */
+
+    if (!config) {
+
+        cartSection.style.display =
+            "none";
+
+        emptySection.style.display =
+            "block";
+
+        cartBadge.textContent =
+            "0";
+
+        return;
+
+    }
+
+
+    cartSection.style.display =
+        "grid";
+
+    emptySection.style.display =
+        "none";
+
+
+    /* DEFAULT QUANTITY */
+
+    if (
+        !config.quantity ||
+        Number(config.quantity) < 1
+    ) {
+
+        config.quantity = 1;
+
+        saveCart(config);
+
+    }
+
+
+    const quantity =
+        Number(config.quantity);
+
+
+    const price =
+        Number(config.price || 0);
+
+
+    const cartTotal =
+        price * quantity;
+
+
+    /* COUNTS */
+
+    itemCount.textContent =
+        quantity +
+        (
+            quantity === 1
+                ? " item"
+                : " items"
+        );
+
+
+    cartBadge.textContent =
+        quantity;
+
+
+    summaryItems.textContent =
+        quantity;
+
+
+    subtotal.textContent =
+        formatPrice(cartTotal);
+
+
+    total.textContent =
+        formatPrice(cartTotal);
+
+
+    /* PRODUCT */
+
+    cartItems.innerHTML = `
+
+        <article class="cart-item">
+
+            <div class="item-top">
+
+                <div>
+
+                    <div class="product-name">
+
+                        ${escapeHTML(
+                            config.product ||
+                            "Joker Tech PC"
+                        )}
+
+                    </div>
+
+                    <div class="product-type">
+
+                        Custom PC Configuration
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="remove-btn"
+                    onclick="removeCart()"
+                >
+                    REMOVE
+                </button>
+
+            </div>
+
+
+            <div class="configuration">
+
+
+                <div class="configuration-item">
+
+                    Processor
+
+                    <strong>
+                        ${escapeHTML(
+                            config.processor ||
+                            "Not specified"
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="configuration-item">
+
+                    RAM
+
+                    <strong>
+                        ${escapeHTML(
+                            config.ram ||
+                            "Not specified"
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="configuration-item">
+
+                    Storage
+
+                    <strong>
+                        ${escapeHTML(
+                            config.storage ||
+                            "Not specified"
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="configuration-item">
+
+                    Graphics
+
+                    <strong>
+                        ${escapeHTML(
+                            config.graphics ||
+                            "Integrated Graphics"
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="configuration-item">
+
+                    Display
+
+                    <strong>
+                        ${escapeHTML(
+                            config.monitor ||
+                            "Monitor Included"
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="configuration-item">
+
+                    Accessories
+
+                    <strong>
+                        Monitor + Keyboard + Mouse + Speaker
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="item-bottom">
+
+
+                <div class="quantity-box">
+
+                    <button
+                        class="quantity-btn"
+                        onclick="changeQuantity(-1)"
+                    >
+                        −
+                    </button>
+
+
+                    <span
+                        id="quantity"
+                        class="quantity"
+                    >
+                        ${quantity}
+                    </span>
+
+
+                    <button
+                        class="quantity-btn"
+                        onclick="changeQuantity(1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+
+                <div class="item-price">
+
+                    ${formatPrice(cartTotal)}
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+    `;
+
+}
+
+
+/* =========================================
+   CHANGE QUANTITY
+========================================= */
+
+function changeQuantity(amount) {
+
+    const config =
+        loadCart();
+
+
+    if (!config) {
+        return;
+    }
+
+
+    let quantity =
+        Number(config.quantity || 1);
+
+
+    quantity += amount;
+
+
+    if (quantity < 1) {
+        quantity = 1;
+    }
+
+
+    /*
+       Maximum quantity is 10
+    */
+
+    if (quantity > 10) {
+        quantity = 10;
+    }
+
+
+    config.quantity =
+        quantity;
+
+
+    saveCart(config);
+
+
+    renderCart();
+
+}
+
+
+/* =========================================
+   REMOVE CART
+========================================= */
+
+function removeCart() {
+
+    const confirmed =
+        confirm(
+            "Remove this configuration from your cart?"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    localStorage.removeItem(
+        CART_KEY
+    );
+
+
+    renderCart();
+
+}
+
+
+/* =========================================
+   CHECKOUT
+========================================= */
+
+checkoutButton.addEventListener(
+    "click",
+    function(event) {
+
+        const config =
+            loadCart();
+
+
+        if (!config) {
+
+            event.preventDefault();
+
+            alert(
+                "Your cart is empty."
+            );
+
+            return;
+
+        }
+
+
+        /*
+           Checkout already reads
+           jokerCartConfiguration.
+        */
+
+    }
+);
+
+
+/* =========================================
+   START
+========================================= */
+
+renderCart();
+
+</script>
+
+</body>
+</html>

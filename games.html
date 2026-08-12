@@ -1,0 +1,1466 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Joker Games - Low-end PC gaming collection">
+
+    <title>Joker Games | Joker Network</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #ffffff;
+
+            background: #070707;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            min-height: 72px;
+
+            padding: 0 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            background:
+                rgba(5,5,5,0.96);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.09);
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        .logo {
+
+            font-size: 21px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        nav a {
+
+            color: #bbbbbb;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        nav a:hover {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 550px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 15%,
+                    #303030 0%,
+                    #111111 38%,
+                    #070707 76%
+                );
+
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+        }
+
+
+        .hero-icon {
+
+            font-size:
+                80px;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .tag {
+
+            color:
+                #ff3030;
+
+            font-size:
+                13px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                5px;
+
+        }
+
+
+        h1 {
+
+            margin:
+                15px 0;
+
+            font-size:
+                clamp(45px, 8vw, 75px);
+
+        }
+
+
+        h1 span {
+
+            color:
+                #ff3030;
+
+        }
+
+
+        .hero p {
+
+            max-width:
+                700px;
+
+            margin:
+                auto;
+
+            color:
+                #999999;
+
+            font-size:
+                17px;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+
+            display:
+                inline-block;
+
+            margin-top:
+                28px;
+
+            padding:
+                14px 23px;
+
+            border-radius:
+                10px;
+
+            background:
+                #252525;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.09);
+
+            font-weight:
+                900;
+
+        }
+
+
+        .button:hover {
+
+            opacity:
+                0.85;
+
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+
+            padding:
+                80px 20px;
+
+        }
+
+
+        .container {
+
+            max-width:
+                1200px;
+
+            margin:
+                auto;
+
+        }
+
+
+        .section-title {
+
+            text-align:
+                center;
+
+            margin-bottom:
+                45px;
+
+        }
+
+
+        .section-title h2 {
+
+            margin:
+                0 0 10px;
+
+            font-size:
+                34px;
+
+        }
+
+
+        .section-title p {
+
+            max-width:
+                680px;
+
+            margin:
+                auto;
+
+            color:
+                #888888;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =========================
+           GAME GRID
+        ========================= */
+
+        .games {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                22px;
+
+        }
+
+
+        .game {
+
+            min-height:
+                360px;
+
+            padding:
+                25px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            border-radius:
+                20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1d1d1d,
+                    #101010
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+        }
+
+
+        .game-icon {
+
+            height:
+                130px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                14px;
+
+            margin-bottom:
+                20px;
+
+            background:
+                #151515;
+
+            font-size:
+                65px;
+
+        }
+
+
+        .game h3 {
+
+            margin:
+                0 0 8px;
+
+            font-size:
+                22px;
+
+        }
+
+
+        .game p {
+
+            margin:
+                0;
+
+            color:
+                #888888;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .badge {
+
+            display:
+                inline-block;
+
+            width:
+                fit-content;
+
+            margin-bottom:
+                10px;
+
+            padding:
+                6px 9px;
+
+            border-radius:
+                20px;
+
+            font-size:
+                9px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                1px;
+
+        }
+
+
+        .coming {
+
+            color:
+                #ffbb55;
+
+            background:
+                rgba(255,170,0,0.10);
+
+        }
+
+
+        .planned {
+
+            color:
+                #999999;
+
+            background:
+                rgba(255,255,255,0.06);
+
+        }
+
+
+        .game-button {
+
+            margin-top:
+                auto;
+
+            padding-top:
+                22px;
+
+        }
+
+
+        .disabled {
+
+            display:
+                block;
+
+            padding:
+                12px;
+
+            text-align:
+                center;
+
+            border-radius:
+                9px;
+
+            background:
+                #202020;
+
+            color:
+                #555555;
+
+            font-size:
+                12px;
+
+            font-weight:
+                900;
+
+            cursor:
+                not-allowed;
+
+        }
+
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .info-box {
+
+            padding:
+                35px;
+
+            border-radius:
+                20px;
+
+            background:
+                #151515;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+        }
+
+
+        .info-box h2 {
+
+            margin:
+                0 0 12px;
+
+        }
+
+
+        .info-box p {
+
+            margin:
+                0;
+
+            color:
+                #888888;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        .points {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                15px;
+
+            margin-top:
+                25px;
+
+        }
+
+
+        .point {
+
+            padding:
+                20px;
+
+            text-align:
+                center;
+
+            border-radius:
+                14px;
+
+            background:
+                #101010;
+
+        }
+
+
+        .point-icon {
+
+            font-size:
+                30px;
+
+        }
+
+
+        .point strong {
+
+            display:
+                block;
+
+            margin-top:
+                8px;
+
+            font-size:
+                13px;
+
+        }
+
+
+        .point span {
+
+            display:
+                block;
+
+            margin-top:
+                5px;
+
+            color:
+                #666666;
+
+            font-size:
+                11px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding:
+                55px 20px;
+
+            text-align:
+                center;
+
+            background:
+                #050505;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color:
+                #777777;
+
+            font-size:
+                13px;
+
+        }
+
+
+        footer h2 {
+
+            color:
+                #ffffff;
+
+        }
+
+
+        footer a {
+
+            color:
+                #bbbbbb;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .games {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .points {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            header {
+
+                padding:
+                    15px 20px;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            nav {
+
+                gap:
+                    11px;
+
+            }
+
+
+            section {
+
+                padding:
+                    60px 15px;
+
+            }
+
+
+            .games {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .points {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .info-box {
+
+                padding:
+                    25px 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+
+    <div class="logo">
+
+        🃏 Joker Network
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="games.html">
+            Games
+        </a>
+
+        <a href="shop.html">
+            🖥️ Joker PC
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+        <a href="donate.html">
+            ❤️ Donate
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <div class="hero-icon">
+
+            🎮
+
+        </div>
+
+
+        <div class="tag">
+
+            JOKER GAMES
+
+        </div>
+
+
+        <h1>
+
+            LOW-END
+            <span>
+                GAMING
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            A future collection of games and
+            gaming tools designed for affordable
+            and low-end PCs.
+
+        </p>
+
+
+        <a
+            href="#games"
+            class="button"
+        >
+
+            🎮 View Games
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     GAMES
+========================= -->
+
+<section id="games">
+
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+
+            <h2>
+
+                🕹️ Joker Games Collection
+
+            </h2>
+
+
+            <p>
+
+                Joker Games is currently in
+                development. Games will be added
+                here when they are ready.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="games">
+
+
+            <!-- GAME 1 -->
+
+            <article class="game">
+
+
+                <div class="game-icon">
+
+                    🃏
+
+                </div>
+
+
+                <div class="badge coming">
+
+                    COMING SOON
+
+                </div>
+
+
+                <h3>
+
+                    Joker Runner
+
+                </h3>
+
+
+                <p>
+
+                    A lightweight Joker Games
+                    experience planned for
+                    low-end computers.
+
+                </p>
+
+
+                <div class="game-button">
+
+                    <span class="disabled">
+
+                        🚧 Not Available Yet
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- GAME 2 -->
+
+            <article class="game">
+
+
+                <div class="game-icon">
+
+                    🚗
+
+                </div>
+
+
+                <div class="badge planned">
+
+                    PLANNED
+
+                </div>
+
+
+                <h3>
+
+                    Joker Racing
+
+                </h3>
+
+
+                <p>
+
+                    A lightweight racing game
+                    concept designed around
+                    affordable PC hardware.
+
+                </p>
+
+
+                <div class="game-button">
+
+                    <span class="disabled">
+
+                        🚧 Planned
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- GAME 3 -->
+
+            <article class="game">
+
+
+                <div class="game-icon">
+
+                    🔫
+
+                </div>
+
+
+                <div class="badge planned">
+
+                    PLANNED
+
+                </div>
+
+
+                <h3>
+
+                    Joker Arena
+
+                </h3>
+
+
+                <p>
+
+                    A future lightweight action
+                    game concept for the Joker
+                    Games collection.
+
+                </p>
+
+
+                <div class="game-button">
+
+                    <span class="disabled">
+
+                        🚧 Planned
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- GAME 4 -->
+
+            <article class="game">
+
+
+                <div class="game-icon">
+
+                    🧩
+
+                </div>
+
+
+                <div class="badge coming">
+
+                    COMING SOON
+
+                </div>
+
+
+                <h3>
+
+                    Joker Puzzle
+
+                </h3>
+
+
+                <p>
+
+                    Simple and lightweight games
+                    for PCs with limited hardware.
+
+                </p>
+
+
+                <div class="game-button">
+
+                    <span class="disabled">
+
+                        🚧 Not Available Yet
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- GAME 5 -->
+
+            <article class="game">
+
+
+                <div class="game-icon">
+
+                    ⚔️
+
+                </div>
+
+
+                <div class="badge planned">
+
+                    PLANNED
+
+                </div>
+
+
+                <h3>
+
+                    Joker Battle
+
+                </h3>
+
+
+                <p>
+
+                    A future low-resource battle
+                    game concept.
+
+                </p>
+
+
+                <div class="game-button">
+
+                    <span class="disabled">
+
+                        🚧 Planned
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- GAME 6 -->
+
+            <article class="game">
+
+
+                <div class="game-icon">
+
+                    🎯
+
+                </div>
+
+
+                <div class="badge planned">
+
+                    PLANNED
+
+                </div>
+
+
+                <h3>
+
+                    Joker Target
+
+                </h3>
+
+
+                <p>
+
+                    A simple performance-friendly
+                    arcade concept for Joker Games.
+
+                </p>
+
+
+                <div class="game-button">
+
+                    <span class="disabled">
+
+                        🚧 Planned
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     LOW-END INFO
+========================= -->
+
+<section
+    style="background:#0b0b0b;"
+>
+
+
+    <div class="container">
+
+
+        <div class="info-box">
+
+
+            <h2>
+
+                💻 Built With Low-End PCs In Mind
+
+            </h2>
+
+
+            <p>
+
+                Joker Games is planned around
+                accessible hardware. The goal is
+                to make lightweight games that can
+                run comfortably on affordable
+                computers rather than requiring
+                expensive gaming hardware.
+
+            </p>
+
+
+            <div class="points">
+
+
+                <div class="point">
+
+                    <div class="point-icon">
+                        ⚡
+                    </div>
+
+                    <strong>
+                        Lightweight
+                    </strong>
+
+                    <span>
+                        Performance focused
+                    </span>
+
+                </div>
+
+
+                <div class="point">
+
+                    <div class="point-icon">
+                        💾
+                    </div>
+
+                    <strong>
+                        Small Size
+                    </strong>
+
+                    <span>
+                        Storage friendly
+                    </span>
+
+                </div>
+
+
+                <div class="point">
+
+                    <div class="point-icon">
+                        🖥️
+                    </div>
+
+                    <strong>
+                        Low-End PC
+                    </strong>
+
+                    <span>
+                        Affordable hardware
+                    </span>
+
+                </div>
+
+
+                <div class="point">
+
+                    <div class="point-icon">
+                        🎮
+                    </div>
+
+                    <strong>
+                        Simple Gaming
+                    </strong>
+
+                    <span>
+                        Easy to play
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+
+    <div class="container">
+
+
+        <div class="info-box"
+             style="text-align:center;">
+
+
+            <h2>
+
+                🖥️ Need a PC for Joker Games?
+
+            </h2>
+
+
+            <p>
+
+                Check out the upcoming Joker PC
+                collection.
+
+            </p>
+
+
+            <a
+                href="shop.html"
+                class="button"
+            >
+
+                🖥️ Open Joker PC
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+    <h2>
+
+        🃏 Joker Network
+
+    </h2>
+
+
+    <p>
+
+        Joker OS • Joker Games • Joker PC
+
+    </p>
+
+
+    <p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        ·
+
+        <a href="games.html">
+            Games
+        </a>
+
+        ·
+
+        <a href="shop.html">
+            Joker PC
+        </a>
+
+        ·
+
+        <a href="login.html">
+            Login
+        </a>
+
+        ·
+
+        <a href="donate.html">
+            Donate
+        </a>
+
+    </p>
+
+
+    <p>
+
+        © 2026 Jokernetworkpvt.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>
+```
